@@ -5,5 +5,8 @@ class Calc : public wxApp
 public:
 	Calc();
 	~Calc();
+
+private:
+	bool OnInit(); // maybe make virtual??
 };
 

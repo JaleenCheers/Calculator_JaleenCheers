@@ -6,3 +6,8 @@ Calc::Calc() {
 Calc::~Calc() {
 
 }
+
+bool Calc::OnInit()
+{
+	return false;
+}
