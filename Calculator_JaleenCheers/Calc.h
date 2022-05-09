@@ -6,7 +6,7 @@ class Calc : public wxApp
 public:
 	Calc();
 	~Calc();
-	bool OnInit(); // maybe make virtual??
+	virtual bool OnInit(); 
 private:
 	Main* m_frame1 = nullptr;
 
