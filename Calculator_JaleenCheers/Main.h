@@ -6,7 +6,7 @@ public:
 	Main();
 	~Main();
 
-
+	
 
 	wxDECLARE_EVENT_TABLE();
 

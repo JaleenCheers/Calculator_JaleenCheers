@@ -9,5 +9,5 @@ Calc::~Calc() {
 
 bool Calc::OnInit()
 {
-	return false;
+	return true;
 }
