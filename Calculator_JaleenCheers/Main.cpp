@@ -9,7 +9,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	mField = new int[mFieldWidth * mFieldHeight];
 	wxGridSizer* grid = new wxGridSizer(mFieldWidth, mFieldHeight, -100, 25);
 	text = new wxTextCtrl(this, wxID_ANY, "", wxPoint(0, 0), wxSize(400, 100));
-
+	SetBackgroundColour("#577590");
 
 	int num = 9;
 	int counter = 0;
