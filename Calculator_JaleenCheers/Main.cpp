@@ -18,9 +18,11 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 		for (int y = 0; y < mFieldHeight; ++y) {
 
 
-
-			btn[y * mFieldWidth + x] = new wxButton(this, 10000 + (y * mFieldWidth + x), "", wxDefaultPosition, wxSize(60, 50));
+			// Fill window with button using a grid and add color
+			btn[y * mFieldWidth + x] = new wxButton(this, 10000 + (y * mFieldWidth + x), "", wxDefaultPosition, wxSize(60, 60));
 			grid->Add(btn[y * mFieldWidth + x], 1, wxALIGN_BOTTOM);
+		//	btn[y * mFieldWidth + x]->SetBackgroundColour(wxColor("#577590"));
+
 			// Set button labels
 			switch (counter)
 			{
@@ -74,9 +76,9 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 				break;
 			}
 
-			mField[y * mFieldWidth + x] = 0;
+		//	mField[y * mFieldWidth + x] = 0;???
 
-
+			//Increment counter for switch case
 			++counter;
 
 
