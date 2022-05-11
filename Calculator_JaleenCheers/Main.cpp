@@ -30,7 +30,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 				btn[y * mFieldWidth + x]->SetLabel("C");
 				break;
 			case 1:
-				btn[y * mFieldWidth + x]->SetLabel("sqrt");
+				btn[y * mFieldWidth + x]->SetLabel("Sqrt");
 				break;
 			case 2:
 				btn[y * mFieldWidth + x]->SetLabel("+/-");
