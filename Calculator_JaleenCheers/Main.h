@@ -7,7 +7,6 @@ public:
 	~Main();
 	int mFieldWidth = 5;
 	int mFieldHeight = 5;
-	int* mField = nullptr;
 	wxTextCtrl* text;
 	wxButton** btn;
 	
