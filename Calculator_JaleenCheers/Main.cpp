@@ -21,7 +21,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 			// Fill window with button using a grid and add color
 			btn[y * mFieldWidth + x] = new wxButton(this, 10000 + (y * mFieldWidth + x), "", wxDefaultPosition, wxSize(60, 60));
 			grid->Add(btn[y * mFieldWidth + x], 1, wxALIGN_BOTTOM);
-		//	btn[y * mFieldWidth + x]->SetBackgroundColour(wxColor("#577590"));
+			btn[y * mFieldWidth + x]->SetBackgroundColour(wxColor("#adb5bd"));
 
 			// Set button labels
 			switch (counter)
