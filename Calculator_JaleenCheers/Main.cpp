@@ -1,12 +1,13 @@
 #include "Main.h"
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
+EVT_BUTTON(10000, Main::OnButtonClicked)
 wxEND_EVENT_TABLE()
 
 // wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(475, 500), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX)) {
 
-	btn = new wxButton* [mFieldHeight * mFieldWidth];
+	btn = new wxButton * [mFieldHeight * mFieldWidth];
 	wxGridSizer* grid = new wxGridSizer(mFieldWidth, mFieldHeight, -100, 25);
 	text = new wxTextCtrl(this, wxID_ANY, "", wxPoint(0, 0), wxSize(475, 100));
 
@@ -80,7 +81,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 				break;
 			}
 
-		
+
 
 			//Increment counter for switch case
 			++counter;
@@ -99,4 +100,11 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 Main::~Main() {
 	delete[] btn;
 	delete[] text;
+}
+
+void Main::OnButtonClicked(wxCommandEvent& evt)
+{
+
+
+	evt.Skip();
 }

@@ -10,9 +10,13 @@ public:
 	wxTextCtrl* text;
 	wxButton** btn;
 	
+	void OnButtonClicked(wxCommandEvent& evt);
+
+private:
 	
 
 	wxDECLARE_EVENT_TABLE();
+
 
 };
 
