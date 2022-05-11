@@ -27,7 +27,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 			grid->Add(btn[y * mFieldWidth + x], 1, wxALIGN_BOTTOM);
 			btn[y * mFieldWidth + x]->SetBackgroundColour(wxColor("#adb5bd"));
 
-			// Set button labels
+			// Set button labels 
 			switch (counter)
 			{
 			case 0:
