@@ -1,6 +1,30 @@
 #include "Main.h"
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
-EVT_BUTTON(10000, Main::OnButtonClicked)
+//EVT_BUTTON(10000, Main::OnButtonClicked)
+//EVT_BUTTON(10001, Main::OnButtonClicked)
+//EVT_BUTTON(10002, Main::OnButtonClicked)
+//EVT_BUTTON(10003, Main::OnButtonClicked)
+EVT_BUTTON(10004, Main::OnButtonClicked)
+//EVT_BUTTON(10005, Main::OnButtonClicked)
+EVT_BUTTON(10006, Main::OnButtonClicked)
+EVT_BUTTON(10007, Main::OnButtonClicked)
+EVT_BUTTON(10008, Main::OnButtonClicked)
+//EVT_BUTTON(10009, Main::OnButtonClicked)
+//EVT_BUTTON(10010, Main::OnButtonClicked)
+EVT_BUTTON(10011, Main::OnButtonClicked)
+EVT_BUTTON(10012, Main::OnButtonClicked)
+EVT_BUTTON(10013, Main::OnButtonClicked)
+//EVT_BUTTON(10014, Main::OnButtonClicked)
+//EVT_BUTTON(10015, Main::OnButtonClicked)
+EVT_BUTTON(10016, Main::OnButtonClicked)
+EVT_BUTTON(10017, Main::OnButtonClicked)
+EVT_BUTTON(10018, Main::OnButtonClicked)
+//EVT_BUTTON(10019, Main::OnButtonClicked)
+EVT_BUTTON(10020, Main::OnButtonClicked)
+EVT_BUTTON(10021, Main::OnButtonClicked)
+EVT_BUTTON(10022, Main::OnButtonClicked)
+EVT_BUTTON(10023, Main::OnButtonClicked)
+//EVT_BUTTON(10024, Main::OnButtonClicked)
 wxEND_EVENT_TABLE()
 
 // wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX
@@ -9,7 +33,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 
 	btn = new wxButton * [mFieldHeight * mFieldWidth];
 	wxGridSizer* grid = new wxGridSizer(mFieldWidth, mFieldHeight, -100, 25);
-	text = new wxTextCtrl(this, wxID_ANY, "", wxPoint(0, 0), wxSize(475, 100));
+	text = new wxTextCtrl(this, wxID_ANY, "", wxPoint(0, 0), wxSize(475, 100), wxCB_READONLY);
 
 	// Set Font and Background Color
 	SetBackgroundColour("#577590");
@@ -50,7 +74,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 				btn[y * mFieldWidth + x]->SetLabel("Dec.");
 				break;
 			case 9:
-				btn[y * mFieldWidth + x]->SetLabel('X');
+				btn[y * mFieldWidth + x]->SetLabel('x');
 				break;
 			case 10:
 				btn[y * mFieldWidth + x]->SetLabel("Bin.");
@@ -104,7 +128,8 @@ Main::~Main() {
 
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
-
+	//dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel();
+	text->AppendText(dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 
 	evt.Skip();
 }
