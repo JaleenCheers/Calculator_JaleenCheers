@@ -10,7 +10,7 @@ EVT_BUTTON(10006, Main::OnButtonClicked)   // 9
 EVT_BUTTON(10007, Main::OnButtonClicked)   // 6
 EVT_BUTTON(10008, Main::OnButtonClicked)   // 3
 //EVT_BUTTON(10009, Main::OnButtonClicked) // Made 
-EVT_BUTTON(10010, Main::OnButtonClicked)   // +/-
+//EVT_BUTTON(10010, Main::OnButtonClicked)   // +/-
 EVT_BUTTON(10011, Main::OnButtonClicked)   // 8
 EVT_BUTTON(10012, Main::OnButtonClicked)   // 5
 EVT_BUTTON(10013, Main::OnButtonClicked)   // 2
@@ -130,10 +130,16 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 {
 	//dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel();
 	int id = evt.GetId();
-	if (id == 10000)
-		text->Clear();
-	else
+	switch (id)
+	{
+	case 10000:
+			text->Clear();
+			break;
+	default:
 		text->AppendText(dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
+		break;
+	}
+
 
 	evt.Skip();
 }
