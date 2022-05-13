@@ -131,24 +131,22 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	int id = evt.GetId();
 	wxString textString = text->GetLabel();
 
+
 	switch (id)
 	{
-
 	case 10000:
 		text->Clear();
 		break;
 	case 10010:
 		if (!mtoggleNegative)
-			textString.insert(textString.begin(), '-');
-
+			text->SetLabel("-" + text->GetLabel());
 		else
-			textString.erase(textString.begin());
+			text->SetLabel(text->GetLabel().erase(0, 1));
 
 		mtoggleNegative = !mtoggleNegative;
-		text->SetLabel(textString);
 		break;
 	default:
-		text->AppendText(dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
+		text->SetLabel(dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		break;
 	}
 
