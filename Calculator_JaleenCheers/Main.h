@@ -7,6 +7,7 @@ public:
 	~Main();
 	int mFieldWidth = 5;
 	int mFieldHeight = 5;
+	bool mtoggleNegative = false;
 	wxTextCtrl* text;
 	wxButton** btn;
 	

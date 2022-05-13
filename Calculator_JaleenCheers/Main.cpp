@@ -1,6 +1,6 @@
 #include "Main.h"
-wxBEGIN_EVENT_TABLE(Main, wxFrame)
-EVT_BUTTON(10000, Main::OnButtonClicked) // C
+wxBEGIN_EVENT_TABLE(Main, wxFrame)      // Maybe make this a for loop
+EVT_BUTTON(10000, Main::OnButtonClicked)   // C
 //EVT_BUTTON(10001, Main::OnButtonClicked) // Dec
 //EVT_BUTTON(10002, Main::OnButtonClicked) // Bin
 //EVT_BUTTON(10003, Main::OnButtonClicked) // Hex
@@ -10,7 +10,7 @@ EVT_BUTTON(10006, Main::OnButtonClicked)   // 9
 EVT_BUTTON(10007, Main::OnButtonClicked)   // 6
 EVT_BUTTON(10008, Main::OnButtonClicked)   // 3
 //EVT_BUTTON(10009, Main::OnButtonClicked) // Made 
-//EVT_BUTTON(10010, Main::OnButtonClicked)   // +/-
+EVT_BUTTON(10010, Main::OnButtonClicked) // +/-
 EVT_BUTTON(10011, Main::OnButtonClicked)   // 8
 EVT_BUTTON(10012, Main::OnButtonClicked)   // 5
 EVT_BUTTON(10013, Main::OnButtonClicked)   // 2
@@ -128,13 +128,25 @@ Main::~Main() {
 
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
-	//dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel();
 	int id = evt.GetId();
+	wxString textString = text->GetLabel();
+
 	switch (id)
 	{
+
 	case 10000:
-			text->Clear();
-			break;
+		text->Clear();
+		break;
+	case 10010:
+		if (!mtoggleNegative)
+			textString.insert(textString.begin(), '-');
+
+		else
+			textString.erase(textString.begin());
+
+		mtoggleNegative = !mtoggleNegative;
+		text->SetLabel(textString);
+		break;
 	default:
 		text->AppendText(dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		break;
