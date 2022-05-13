@@ -129,7 +129,7 @@ Main::~Main() {
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
 	int id = evt.GetId();
-	wxString textString = text->GetLabel();
+	
 
 
 	switch (id)
