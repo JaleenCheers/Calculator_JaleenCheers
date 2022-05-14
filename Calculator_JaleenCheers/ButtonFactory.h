@@ -3,9 +3,13 @@
 class ButtonFactory
 {
 public:
+	// Constructor and Destructor
 	ButtonFactory();
 	~ButtonFactory();
 
+	// data members
+	wxButton* btn;
+	Main* main = nullptr;
 
 
 	// Clear button
