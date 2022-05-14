@@ -134,10 +134,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	switch (id)
 	{
-	case 10000:
+	case 10000: // C
 		text->Clear();
 		break;
-	case 10010:
+	case 10010: // +/-
 		if (!mtoggleNegative)
 			text->SetLabel("-" + text->GetLabel());
 		else

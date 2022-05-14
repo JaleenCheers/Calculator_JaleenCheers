@@ -1,7 +1,20 @@
 #include "ButtonFactory.h"
+#include "Main.h"
+
+
+
+ButtonFactory::ButtonFactory()
+{
+}
+
+ButtonFactory::~ButtonFactory()
+{
+}
 
 wxButton ButtonFactory::CreateCButton()
 {
+	/*wxButton* c = new wxButton * [5 * 5];
+	 c = new wxButton(nullptr, 10000, "C", wxDefaultPosition, wxSize(75, 60));*/
 	return wxButton();
 }
 

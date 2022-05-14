@@ -2,6 +2,12 @@
 #include "wx/wx.h"
 class ButtonFactory
 {
+public:
+	ButtonFactory();
+	~ButtonFactory();
+
+
+
 	// Clear button
 	wxButton CreateCButton();
 	// Toggle negative button
