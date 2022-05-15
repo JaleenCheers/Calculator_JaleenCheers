@@ -72,8 +72,8 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	// Add all buttons to the grid
 	grid->Add(btnClear, 1, wxALIGN_BOTTOM);
 	grid->Add(btnSqrt, 1, wxALIGN_BOTTOM);
-	grid->Add(btnNegative, 1, wxALIGN_BOTTOM);
 	grid->Add(btnMod, 1, wxALIGN_BOTTOM);
+	grid->Add(btnNegative, 1, wxALIGN_BOTTOM);
 	grid->Add(btnDivide, 1, wxALIGN_BOTTOM);
 	grid->Add(btnDec, 1, wxALIGN_BOTTOM);
 	grid->Add(btn7, 1, wxALIGN_BOTTOM);
