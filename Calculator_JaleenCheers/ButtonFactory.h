@@ -12,38 +12,8 @@ public:
 	wxButton* btn;
 
 
-	// Clear button
-	wxButton* CreateCButton();
-	// Toggle negative button
-	wxButton* CreateNegativeButton();
-	// Output mode buttons
-	wxButton* CreateDecButton();	
-	wxButton* CreateBinButton();			
-	wxButton* CreateHexButton();			
-	// Aesthetic buttons
-	wxButton* CreateMadeButton();		
-	wxButton* CreateByButton();			
-	wxButton* CreateJTCButton();
-	// Operator buttons
-	wxButton* CreateSqrtButton();
-	wxButton* CreateModButton();         
-	wxButton* CreateDivideButton();
-	wxButton* CreateMultiplyButton();
-	wxButton* CreateMinusButton();
-	wxButton* CreatePlusButton();
-	wxButton* CreateEqualsButton();
-	// Number buttons
-	wxButton* CreateZeroButton();		
-	wxButton* CreateOneButton();
-	wxButton* CreateTwoButton();			
-	wxButton* CreateThreeButton();		
-	wxButton* CreateFourButton();
-	wxButton* CreateFiveButton();		
-	wxButton* CreateSixButton();			
-	wxButton* CreateSevenButton();
-	wxButton* CreateEightButton();		
-	wxButton* CreateNineButton();		
+	// Create button method
+	wxButton* CreateButton(wxWindow* _window, unsigned int _id, const char*, wxPoint _point, wxSize _size);
 
-private :
-	wxWindow* window = nullptr;
+
 };										

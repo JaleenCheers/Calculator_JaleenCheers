@@ -31,7 +31,8 @@ wxEND_EVENT_TABLE()
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(475, 500), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX)) {
 
-	btn = new wxButton * [mFieldHeight * mFieldWidth];
+	ButtonFactory fact;
+	//btn = new wxButton * [mFieldHeight * mFieldWidth];
 	wxGridSizer* grid = new wxGridSizer(mFieldWidth, mFieldHeight, -100, 25);
 	text = new wxTextCtrl(this, wxID_ANY, "", wxPoint(0, 0), wxSize(475, 100), wxCB_READONLY);
 
@@ -41,14 +42,69 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	SetFont(font);
 
 	int num = 9;
-	
 
-	for (int i = 0; i < 25; ++i) {
+
+	//// Make All the buttons
+	//btnClear = fact.CreateButton(this, 10000, "C", wxDefaultPosition, wxSize(75, 60));
+	//btnDec = fact.CreateButton(this, 10001, "Dec.", wxDefaultPosition, wxSize(75, 60));
+	//btnBin = fact.CreateButton(this, 10002, "Bin.", wxDefaultPosition, wxSize(75, 60));
+	//btnHex = fact.CreateButton(this, 10003, "Hex", wxDefaultPosition, wxSize(75, 60));
+	//btn0 = fact.CreateButton(this, 10004, "0", wxDefaultPosition, wxSize(75, 60));
+	//btnSqrt = fact.CreateButton(this, 10005, "Sqrt", wxDefaultPosition, wxSize(75, 60));
+	//btn9 = fact.CreateButton(this, 10006, "9", wxDefaultPosition, wxSize(75, 60));
+	//btn6 = fact.CreateButton(this, 10007, "6", wxDefaultPosition, wxSize(75, 60));
+	//btn3 = fact.CreateButton(this, 10008, "3", wxDefaultPosition, wxSize(75, 60));
+	//btnMade = fact.CreateButton(this, 10009, "Made", wxDefaultPosition, wxSize(75, 60));
+	//btnNegative = fact.CreateButton(this, 10010, "+/-", wxDefaultPosition, wxSize(75, 60));
+	//btn8 = fact.CreateButton(this, 10011, "8", wxDefaultPosition, wxSize(75, 60));
+	//btn5 = fact.CreateButton(this, 10012, "5", wxDefaultPosition, wxSize(75, 60));
+	//btn2 = fact.CreateButton(this, 10013, "2", wxDefaultPosition, wxSize(75, 60));
+	//btnBy = fact.CreateButton(this, 10014, "By", wxDefaultPosition, wxSize(75, 60));
+	//btnMod = fact.CreateButton(this, 10015, "MOD", wxDefaultPosition, wxSize(75, 60));
+	//btn7 = fact.CreateButton(this, 10016, "7", wxDefaultPosition, wxSize(75, 60));
+	//btn4 = fact.CreateButton(this, 10017, "4", wxDefaultPosition, wxSize(75, 60));
+	//btn1 = fact.CreateButton(this, 10018, "1", wxDefaultPosition, wxSize(75, 60));
+	//btnJTC = fact.CreateButton(this, 10019, "JTC", wxDefaultPosition, wxSize(75, 60));
+	//btnDivide = fact.CreateButton(this, 10020, "/", wxDefaultPosition, wxSize(75, 60));
+	//btnMultiply = fact.CreateButton(this, 10021, "x", wxDefaultPosition, wxSize(75, 60));
+	//btnMinus = fact.CreateButton(this, 10022, "-", wxDefaultPosition, wxSize(75, 60));
+	//btnPlus = fact.CreateButton(this, 10023, "+", wxDefaultPosition, wxSize(75, 60));
+	//btnEquals = fact.CreateButton(this, 10024, "=", wxDefaultPosition, wxSize(75, 60));
+
+
+
+	//grid->Add(btnClear, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnSqrt, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnNegative, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnMod, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnDivide, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnDec, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn9, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn8, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn7, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnMultiply, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnBin, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn6, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn5, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn4, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnMinus, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnHex, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn3, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn2, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn1, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnPlus, 1, wxALIGN_BOTTOM);
+	//grid->Add(btn0, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnMade, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnBy, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnJTC, 1, wxALIGN_BOTTOM);
+	//grid->Add(btnEquals, 1, wxALIGN_BOTTOM);
+
+	/*for (int i = 0; i < 25; ++i) {
 
 		switch (i)
 		{
 		case 1:
-			btn[i] = ButtonFactory::CreateCButton();
+			btn[i] = fact.CreateCButton();
 			break;
 		default:
 			break;
@@ -56,7 +112,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 
 		grid->Add(btn[i]);
 
-	}
+	}*/
 
 
 	//grid->Add(ButtonFactory::CreateCButton());
@@ -140,7 +196,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	grid->Layout();
 }
 Main::~Main() {
-	delete[] btn;
+
 	delete[] text;
 }
 
