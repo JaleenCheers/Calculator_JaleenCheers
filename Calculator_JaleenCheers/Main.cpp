@@ -73,31 +73,31 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 
 
 
-	//grid->Add(btnClear, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnSqrt, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnNegative, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnMod, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnDivide, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnDec, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn9, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn8, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn7, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnMultiply, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnBin, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn6, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn5, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn4, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnMinus, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnHex, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn3, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn2, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn1, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnPlus, 1, wxALIGN_BOTTOM);
-	//grid->Add(btn0, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnMade, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnBy, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnJTC, 1, wxALIGN_BOTTOM);
-	//grid->Add(btnEquals, 1, wxALIGN_BOTTOM);
+	grid->Add(btnClear, 1, wxALIGN_BOTTOM);
+	grid->Add(btnSqrt, 1, wxALIGN_BOTTOM);
+	grid->Add(btnNegative, 1, wxALIGN_BOTTOM);
+	grid->Add(btnMod, 1, wxALIGN_BOTTOM);
+	grid->Add(btnDivide, 1, wxALIGN_BOTTOM);
+	grid->Add(btnDec, 1, wxALIGN_BOTTOM);
+	grid->Add(btn9, 1, wxALIGN_BOTTOM);
+	grid->Add(btn8, 1, wxALIGN_BOTTOM);
+	grid->Add(btn7, 1, wxALIGN_BOTTOM);
+	grid->Add(btnMultiply, 1, wxALIGN_BOTTOM);
+	grid->Add(btnBin, 1, wxALIGN_BOTTOM);
+	grid->Add(btn6, 1, wxALIGN_BOTTOM);
+	grid->Add(btn5, 1, wxALIGN_BOTTOM);
+	grid->Add(btn4, 1, wxALIGN_BOTTOM);
+	grid->Add(btnMinus, 1, wxALIGN_BOTTOM);
+	grid->Add(btnHex, 1, wxALIGN_BOTTOM);
+	grid->Add(btn3, 1, wxALIGN_BOTTOM);
+	grid->Add(btn2, 1, wxALIGN_BOTTOM);
+	grid->Add(btn1, 1, wxALIGN_BOTTOM);
+	grid->Add(btnPlus, 1, wxALIGN_BOTTOM);
+	grid->Add(btn0, 1, wxALIGN_BOTTOM);
+	grid->Add(btnMade, 1, wxALIGN_BOTTOM);
+	grid->Add(btnBy, 1, wxALIGN_BOTTOM);
+	grid->Add(btnJTC, 1, wxALIGN_BOTTOM);
+	grid->Add(btnEquals, 1, wxALIGN_BOTTOM);
 
 	/*for (int i = 0; i < 25; ++i) {
 
