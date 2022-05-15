@@ -5,7 +5,7 @@
 
 ButtonFactory::ButtonFactory()
 {
-	
+	btn = new wxButton();
 
 }
 
