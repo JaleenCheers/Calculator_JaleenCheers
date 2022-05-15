@@ -24,7 +24,7 @@ public:
 	wxButton* btn9 = nullptr;
 	wxButton* btnPlus = nullptr;
 	wxButton* btnMinus = nullptr;
-	wxButton* btnDivide = nullptr;
+	wxButton* btnDivide = nullptr; 
 	wxButton* btnMultiply = nullptr;
 	wxButton* btnSqrt = nullptr;
 	wxButton* btnEquals = nullptr;
