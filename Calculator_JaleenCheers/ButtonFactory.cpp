@@ -1,12 +1,11 @@
 #include "ButtonFactory.h"
-#include "Main.h"
-#include "Calc.h"
+
 
 
 
 ButtonFactory::ButtonFactory()
 {
-	main = new Main();
+	window = new wxWindow();
 
 }
 
@@ -14,154 +13,154 @@ ButtonFactory::~ButtonFactory()
 {
 }
 
-wxButton ButtonFactory::CreateCButton()
+wxButton* ButtonFactory::CreateCButton()
 {
-	btn = new wxButton(main, 10000, "C", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10000, "C", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateNegativeButton()
+wxButton* ButtonFactory::CreateNegativeButton()
 {
-	btn = new wxButton(main, 10000, "+/-", wxDefaultPosition, wxSize(75, 60));
-	return  wxButton();
+	btn = new wxButton(window, 10010, "+/-", wxDefaultPosition, wxSize(75, 60));
+	return  btn;
 }
 
-wxButton ButtonFactory::CreateDecButton()
+wxButton* ButtonFactory::CreateDecButton()
 {
-	btn = new wxButton(main, 10000, "Dec.", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10001, "Dec.", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateBinButton()
+wxButton* ButtonFactory::CreateBinButton()
 {
-	btn = new wxButton(main, 10000, "Bin.", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10002, "Bin.", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateHexButton()
+wxButton* ButtonFactory::CreateHexButton()
 {
-	btn = new wxButton(main, 10000, "Hex.", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10003, "Hex.", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateMadeButton()
+wxButton* ButtonFactory::CreateMadeButton()
 {
-	btn = new wxButton(main, 10000, "Made", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10009, "Made", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateByButton()
+wxButton* ButtonFactory::CreateByButton()
 {
-	btn = new wxButton(main, 10000, "By", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10014, "By", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateJTCButton()
+wxButton* ButtonFactory::CreateJTCButton()
 {
-	btn = new wxButton(main, 10000, "JTC", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10019, "JTC", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateSqrtButton()
+wxButton* ButtonFactory::CreateSqrtButton()
 {
-	btn = new wxButton(main, 10000, "Sqrt", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10005, "Sqrt", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateModButton()
+wxButton* ButtonFactory::CreateModButton()
 {
-	btn = new wxButton(main, 10000, "MOD", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10015, "MOD", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateDivideButton()
+wxButton* ButtonFactory::CreateDivideButton()
 {
-	btn = new wxButton(main, 10000, "/", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10020, "/", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateMultiplyButton()
+wxButton* ButtonFactory::CreateMultiplyButton()
 {
-	btn = new wxButton(main, 10000, "x", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10021, "x", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateMinusButton()
+wxButton* ButtonFactory::CreateMinusButton()
 {
-	btn = new wxButton(main, 10000, "-", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10022, "-", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreatePlusButton()
+wxButton* ButtonFactory::CreatePlusButton()
 {
-	btn = new wxButton(main, 10000, "+", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10023, "+", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateEqualsButton()
+wxButton* ButtonFactory::CreateEqualsButton()
 {
-	btn = new wxButton(main, 10000, "=", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10024, "=", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateZeroButton()
+wxButton* ButtonFactory::CreateZeroButton()
 {
-	btn = new wxButton(main, 10000, "0", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10004, "0", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateOneButton()
+wxButton* ButtonFactory::CreateOneButton()
 {
-	btn = new wxButton(main, 10000, "1", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10018, "1", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateTwoButton()
+wxButton* ButtonFactory::CreateTwoButton()
 {
-	btn = new wxButton(main, 10000, "2", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10013, "2", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateThreeButton()
+wxButton* ButtonFactory::CreateThreeButton()
 {
-	btn = new wxButton(main, 10000, "3", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10008, "3", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateFourButton()
+wxButton* ButtonFactory::CreateFourButton()
 {
-	btn = new wxButton(main, 10000, "4", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10017, "4", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateFiveButton()
+wxButton* ButtonFactory::CreateFiveButton()
 {
-	btn = new wxButton(main, 10000, "5", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10012, "5", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateSixButton()
+wxButton*  ButtonFactory::CreateSixButton()
 {
-	btn = new wxButton(main, 10000, "6", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10007, "6", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateSevenButton()
+wxButton* ButtonFactory::CreateSevenButton()
 {
-	btn = new wxButton(main, 10000, "7", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10016, "7", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateEightButton()
+wxButton* ButtonFactory::CreateEightButton()
 {
-	btn = new wxButton(main, 10000, "8", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10011, "8", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
-wxButton ButtonFactory::CreateNineButton()
+wxButton* ButtonFactory::CreateNineButton()
 {
-	btn = new wxButton(main, 10000, "9", wxDefaultPosition, wxSize(75, 60));
-	return wxButton();
+	btn = new wxButton(window, 10006, "9", wxDefaultPosition, wxSize(75, 60));
+	return btn;
 }
 
 
