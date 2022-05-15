@@ -1,5 +1,5 @@
 #include "Main.h"
-wxBEGIN_EVENT_TABLE(Main, wxFrame)     
+wxBEGIN_EVENT_TABLE(Main, wxFrame)
 EVT_BUTTON(10000, Main::OnButtonClicked)   // C
 //EVT_BUTTON(10001, Main::OnButtonClicked) // Dec
 //EVT_BUTTON(10002, Main::OnButtonClicked) // Bin
@@ -96,7 +96,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	grid->Add(btnJTC, 1, wxALIGN_BOTTOM);
 	grid->Add(btnEquals, 1, wxALIGN_BOTTOM);
 
-	
+
 
 	this->SetSizer(grid);
 	grid->Layout();
@@ -104,6 +104,31 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 Main::~Main() {
 
 	delete[] text;
+	delete[] btn0;
+	delete[] btn1;
+	delete[] btn2;
+	delete[] btn3;
+	delete[] btn4;
+	delete[] btn5;
+	delete[] btn6;
+	delete[] btn7;
+	delete[] btn8;
+	delete[] btn9;
+	delete[] btnPlus;
+	delete[] btnMinus;
+	delete[] btnDivide;
+	delete[] btnMultiply;
+	delete[] btnSqrt;
+	delete[] btnEquals;
+	delete[] btnMod;
+	delete[] btnHex;
+	delete[] btnDec;
+	delete[] btnBin;
+	delete[] btnMade;
+	delete[] btnBy;
+	delete[] btnJTC;
+	delete[] btnClear;
+	delete[] btnNegative;
 }
 
 void Main::OnButtonClicked(wxCommandEvent& evt)

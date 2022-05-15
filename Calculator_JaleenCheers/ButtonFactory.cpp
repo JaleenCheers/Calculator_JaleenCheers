@@ -5,12 +5,13 @@
 
 ButtonFactory::ButtonFactory()
 {
-	btn = new wxButton();
+	
 
 }
 
-ButtonFactory::~ButtonFactory()
+ ButtonFactory::~ButtonFactory()
 {
+	
 }
 
 wxButton* ButtonFactory::CreateButton(wxWindow* _window, unsigned int _id, const char* _label, wxPoint _point, wxSize _size)

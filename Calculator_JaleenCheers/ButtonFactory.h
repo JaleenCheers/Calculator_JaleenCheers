@@ -6,10 +6,10 @@ class ButtonFactory
 public:
 	// Constructor and Destructor
 	ButtonFactory();
-	~ButtonFactory();
+	virtual ~ButtonFactory();
 
 	// data members
-	wxButton* btn;
+	wxButton* btn = new wxButton();
 
 
 	// Create button method
