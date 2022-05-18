@@ -1,16 +1,18 @@
 #include "CalculatorProcessor.h"
 
-
+CalculatorProcessor::CalculatorProcessor() {
+	mCalcProcessor = nullptr;
+}
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
 	
-	/*if (mCalcProcessor == nullptr) {
+	if (mCalcProcessor == nullptr) {
 
-		static CalculatorProcessor* c;
-		mCalcProcessor = c;
+		
+		mCalcProcessor = new CalculatorProcessor();
 	}
-	return mCalcProcessor;*/
+	return mCalcProcessor;
 
-	static CalculatorProcessor* c;
-	return c;
+	
 }
+CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;

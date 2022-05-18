@@ -141,7 +141,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	switch (id)
 	{
 	case 10000: // C
-		text->Clear();
+		text->SetLabel(" ");
 		break;
 	case 10010: // +/-
 		if (!mtoggleNegative)
