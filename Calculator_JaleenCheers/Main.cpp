@@ -24,7 +24,7 @@ EVT_BUTTON(10020, Main::OnButtonClicked)   // /
 EVT_BUTTON(10021, Main::OnButtonClicked)   // x
 EVT_BUTTON(10022, Main::OnButtonClicked)   // -
 EVT_BUTTON(10023, Main::OnButtonClicked)   // +
-//EVT_BUTTON(10024, Main::OnButtonClicked) // =
+EVT_BUTTON(10024, Main::OnButtonClicked)   // =
 wxEND_EVENT_TABLE()
 
 
@@ -105,31 +105,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 Main::~Main() {
 
 	delete[] text;
-	delete[] btn0;
-	delete[] btn1;
-	delete[] btn2;
-	delete[] btn3;
-	delete[] btn4;
-	delete[] btn5;
-	delete[] btn6;
-	delete[] btn7;
-	delete[] btn8;
-	delete[] btn9;
-	delete[] btnPlus;
-	delete[] btnMinus;
-	delete[] btnDivide;
-	delete[] btnMultiply;
-	delete[] btnSqrt;
-	delete[] btnEquals;
-	delete[] btnMod;
-	delete[] btnHex;
-	delete[] btnDec;
-	delete[] btnBin;
-	delete[] btnMade;
-	delete[] btnBy;
-	delete[] btnJTC;
-	delete[] btnClear;
-	delete[] btnNegative;
+
 }
 
 void Main::OnButtonClicked(wxCommandEvent& evt)
@@ -151,6 +127,17 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 		mtoggleNegative = !mtoggleNegative;
 		break;
+	case 10020:      // /
+		break;
+	case 10021:		 // x
+		break;
+	case 10022:		 // -
+		break;
+	case 10023:		 // +
+		break;
+	case 10024:		 // =
+		break;
+
 	default:
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		break;

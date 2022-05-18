@@ -12,6 +12,8 @@ public:
 	void operator= (const CalculatorProcessor& c) = delete;
 
 	static CalculatorProcessor* GetInstance();
+
+	float Addition(float a, float b);
 		
 	
 	
