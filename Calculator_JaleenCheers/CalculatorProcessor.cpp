@@ -7,6 +7,14 @@ CalculatorProcessor::~CalculatorProcessor()
 {
 	delete[] mCalcProcessor;
 }
+bool CalculatorProcessor::GetOperatorClicked()
+{
+	return OperatorClicked;
+}
+void CalculatorProcessor::SetOperatorClicked(bool op)
+{
+	OperatorClicked = op;
+}
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
 

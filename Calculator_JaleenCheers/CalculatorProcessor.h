@@ -14,11 +14,16 @@ public:
 	CalculatorProcessor(CalculatorProcessor& c) = delete;
 	void operator= (const CalculatorProcessor& c) = delete;
 
-	// Get only instance of CalulatorProcessor
+	// Getters and Setters
+	bool GetOperatorClicked();
+	void SetOperatorClicked(bool op);
+
 	static CalculatorProcessor* GetInstance();
 
 	// Operand functions
 	float Addition(float a, float b);
+
+	
 		
 	
 	
