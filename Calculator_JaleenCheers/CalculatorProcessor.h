@@ -4,6 +4,7 @@
 private:
 	CalculatorProcessor(); 
 	static CalculatorProcessor* mCalcProcessor;
+	bool OperatorClicked = false;
 public:
 
 	~CalculatorProcessor();
