@@ -57,7 +57,7 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	btn5 = fact.CreateButton(this, 10012, "5", wxDefaultPosition, wxSize(75, 60));
 	btn2 = fact.CreateButton(this, 10013, "2", wxDefaultPosition, wxSize(75, 60));
 	btnBy = fact.CreateButton(this, 10014, "By", wxDefaultPosition, wxSize(75, 60));
-	btnMod = fact.CreateButton(this, 10015, "MOD", wxDefaultPosition, wxSize(75, 60));
+	btnMod = fact.CreateButton(this, 10015, "%", wxDefaultPosition, wxSize(75, 60));
 	btn7 = fact.CreateButton(this, 10016, "7", wxDefaultPosition, wxSize(75, 60));
 	btn4 = fact.CreateButton(this, 10017, "4", wxDefaultPosition, wxSize(75, 60));
 	btn1 = fact.CreateButton(this, 10018, "1", wxDefaultPosition, wxSize(75, 60));
