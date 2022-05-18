@@ -110,6 +110,8 @@ Main::~Main() {
 
 void Main::OnButtonClicked(wxCommandEvent& evt)
 {
+	// Same instance of Calculator Processor
+	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 	int id = evt.GetId();
 
 
@@ -128,6 +130,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		mtoggleNegative = !mtoggleNegative;
 		break;
 	case 10020:      // /
+		
 		break;
 	case 10021:		 // x
 		break;
