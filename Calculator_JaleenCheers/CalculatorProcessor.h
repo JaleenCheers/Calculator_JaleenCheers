@@ -6,7 +6,7 @@ private:
 	static CalculatorProcessor* mCalcProcessor;
 public:
 
-	//~CalculatorProcessor();
+	~CalculatorProcessor();
 
 	CalculatorProcessor(CalculatorProcessor& c) = delete;
 	void operator= (const CalculatorProcessor& c) = delete;
