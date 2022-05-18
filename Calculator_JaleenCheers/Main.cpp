@@ -29,7 +29,8 @@ wxEND_EVENT_TABLE()
 
 
 Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(475, 500), wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX)) {
-
+	// Calculator Processor
+	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 	// Variables
 	ButtonFactory fact;
 	wxGridSizer* grid = new wxGridSizer(mFieldWidth, mFieldHeight, -100, 25);
