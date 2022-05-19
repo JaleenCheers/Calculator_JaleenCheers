@@ -116,7 +116,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Id of button clicked
 	int id = evt.GetId();
 	
-
+	float x = dynamic_cast<ButtonFactory*>(evt.GetEventObject())->GetValue(id);
 
 	switch (id)
 	{
@@ -133,6 +133,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		mtoggleNegative = !mtoggleNegative;
 		break;
 	case 10020:      // /
+		
 		c->SetOperatorClicked(true);
 		break;
 	case 10021:		 // x
