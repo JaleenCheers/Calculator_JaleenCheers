@@ -1,4 +1,5 @@
 #pragma once
+#include <list>
  class CalculatorProcessor
 {
 private:
@@ -6,8 +7,8 @@ private:
 	CalculatorProcessor(); 
 	static CalculatorProcessor* mCalcProcessor;
 	bool OperatorClicked = false;
-	float num1 = 0;
-	float num2 = 0;
+	std::list<float> num1;
+	std::list<float> num2;
 public:
 	// Destructor
 	~CalculatorProcessor();
