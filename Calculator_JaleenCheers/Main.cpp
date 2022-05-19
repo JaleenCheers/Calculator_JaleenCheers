@@ -118,6 +118,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	
 	float x = dynamic_cast<ButtonFactory*>(evt.GetEventObject())->GetValue(id);
 
+	c->SetNum1(c->GetNum1() + x);
+
 	switch (id)
 	{
 	case 10000: // C
