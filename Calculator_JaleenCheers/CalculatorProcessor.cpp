@@ -23,6 +23,10 @@ void CalculatorProcessor::SetNum1(float _num1)
 {
 	num1 = _num1;
 }
+float CalculatorProcessor::GetNum2()
+{
+	return num2;
+}
 void CalculatorProcessor::SetNum2(float _num2)
 {
 	num2 = _num2;

@@ -29,7 +29,7 @@ public:
 	static CalculatorProcessor* GetInstance();
 
 	// Operand functions
-	float Addition(float a, float b);
+	float Addition();
 
 	
 		
