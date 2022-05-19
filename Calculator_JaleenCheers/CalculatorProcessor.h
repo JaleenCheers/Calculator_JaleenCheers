@@ -20,6 +20,12 @@ public:
 	bool GetOperatorClicked();
 	void SetOperatorClicked(bool op);
 
+	float GetNum1();
+	void SetNum1(float _num1);
+
+	float GetNum2();
+	void SetNum2(float _num2);
+
 	static CalculatorProcessor* GetInstance();
 
 	// Operand functions
