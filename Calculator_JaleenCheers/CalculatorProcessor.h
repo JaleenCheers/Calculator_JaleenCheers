@@ -6,6 +6,8 @@ private:
 	CalculatorProcessor(); 
 	static CalculatorProcessor* mCalcProcessor;
 	bool OperatorClicked = false;
+	float num1 = 0;
+	float num2 = 0;
 public:
 	// Destructor
 	~CalculatorProcessor();
