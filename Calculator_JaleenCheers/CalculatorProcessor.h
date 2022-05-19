@@ -6,8 +6,8 @@ private:
 	CalculatorProcessor(); 
 	static CalculatorProcessor* mCalcProcessor;
 	bool OperatorClicked = false;
-	float* num1 = nullptr;
-	float* num2 = nullptr;
+	float num1 = 0;
+	float num2 = 0;
 public:
 	// Destructor
 	~CalculatorProcessor();
@@ -31,9 +31,6 @@ public:
 	// Operand functions
 	float Addition();
 
-	// Other functions
-	float AppendNum1(float _num1);
-	float AppendNum2(float _num2);
 	
 		
 	

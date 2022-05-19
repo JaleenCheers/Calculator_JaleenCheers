@@ -18,6 +18,4 @@ public:
 	// Get Value method
 	float GetValue(int _id);
 
-	
-
 };										
