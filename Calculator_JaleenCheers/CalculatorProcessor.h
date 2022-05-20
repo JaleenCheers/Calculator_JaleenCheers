@@ -22,10 +22,10 @@ public:
 	void SetOperatorClicked(bool op);
 
 	float GetNum1();
-	void AddNum1(float _num1);
+	void SetNum1(float _num1);
 
 	float GetNum2();
-	void AddNum2(float _num2);
+	void SetNum2(float _num2);
 
 	static CalculatorProcessor* GetInstance();
 
