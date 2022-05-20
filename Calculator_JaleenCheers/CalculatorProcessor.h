@@ -7,8 +7,8 @@ private:
 	CalculatorProcessor(); 
 	static CalculatorProcessor* mCalcProcessor;
 	bool OperatorClicked = false;
-	std::list<float> num1;
-	std::list<float> num2;
+	float num1 = 0;
+	float num2 = 0;
 public:
 	// Destructor
 	~CalculatorProcessor();
