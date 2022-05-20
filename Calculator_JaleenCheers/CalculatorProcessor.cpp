@@ -1,4 +1,5 @@
 #include "CalculatorProcessor.h"
+#include <string>
 
 CalculatorProcessor::CalculatorProcessor() {
 	mCalcProcessor = nullptr;
@@ -17,19 +18,30 @@ void CalculatorProcessor::SetOperatorClicked(bool op)
 }
 float CalculatorProcessor::GetNum1()
 {
-	return num1;
+	float x = 0;
+	for (auto i = num2.begin(); i != num2.end(); ++i)
+		x += *i;
+	return x;
 }
-void CalculatorProcessor::SetNum1(float _num1)
+void CalculatorProcessor::AddNum1(float _num1)
 {
-	num1 = _num1;
+	num1.push_back(_num1);
 }
 float CalculatorProcessor::GetNum2()
 {
-	return num2;
+	std::string s;
+
+	float x = 0;
+	for (auto i = num2.begin(); i != num2.end(); ++i)
+		s += *i;
+
+	
+
+	return s;
 }
-void CalculatorProcessor::SetNum2(float _num2)
+void CalculatorProcessor::AddNum2(float _num2)
 {
-	num2 = _num2;
+	num2.push_back(_num2);
 }
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
