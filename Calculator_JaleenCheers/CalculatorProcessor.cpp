@@ -44,7 +44,7 @@ CalculatorProcessor* CalculatorProcessor::GetInstance()
 }
 float CalculatorProcessor::Addition()
 {
-	float sum = GetNum1() + GetNum2();
+	float sum = num1 + num2;
 	return sum;
 }
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;
