@@ -11,7 +11,7 @@ ButtonFactory::ButtonFactory()
 
  ButtonFactory::~ButtonFactory()
 {
-	 delete[] btn;
+	
 }
 
 wxButton* ButtonFactory::CreateButton(wxWindow* _window, unsigned int _id, const char* _label, wxPoint _point, wxSize _size)

@@ -116,7 +116,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Id of button clicked
 	int id = evt.GetId();
 	
-	float x = dynamic_cast<ButtonFactory*>(evt.GetEventObject())->GetValue(id);
+	
 
 	switch (id)
 	{
@@ -143,6 +143,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetOperatorClicked(true);
 		break;
 	case 10023:		 // +
+		c->SetNum1(wxAtof(text->GetLabel()));
 		c->SetOperatorClicked(true);
 		break;
 	case 10024:		 // =
