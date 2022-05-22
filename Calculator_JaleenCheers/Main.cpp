@@ -133,7 +133,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetOperatorClicked(false);
 		c->SetNum1(0.0);
 		c->SetNum2(0.0);
-		text->Clear();
+		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
 	case 10010: // +/-
 		if (!mtoggleNegative)
@@ -144,15 +144,21 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		mtoggleNegative = !mtoggleNegative;
 		break;
 	case 10020:      // /
-		c->SetOperatorClicked(true);
 		c->SetOp('/');
+		c->SetNum1(wxAtof(text->GetLabel()));
+		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
+		c->SetOperatorClicked(true);
 		break;
 	case 10021:		 // x
 		c->SetOp('x');
+		c->SetNum1(wxAtof(text->GetLabel()));
+		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10022:		 // -
 		c->SetOp('-');
+		c->SetNum1(wxAtof(text->GetLabel()));
+		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10023:		 // +
@@ -164,8 +170,17 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	case 10024:		 // =
 		c->SetNum2(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
+
+
 		if (c->GetOp() == '+')
 			ans << c->Addition();
+		else if (c->GetOp() == '-')
+			ans << c->Subtraction();
+		else if (c->GetOp() == 'x')
+			ans << c->Multiplication();
+		else if (c->GetOp() == '/')
+			ans << c->Division();
+
 		text->SetLabel(ans);
 		c->SetOperatorClicked(false);
 		break;
