@@ -63,8 +63,8 @@ float CalculatorProcessor::Subtraction()
 }
 float CalculatorProcessor::Multiplication()
 {
-	float sum = num1 * num2;
-	return sum;
+	float product = num1 * num2;
+	return product;
 }
 float CalculatorProcessor::Division()
 {
