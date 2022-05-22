@@ -192,8 +192,11 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->Multiplication();
 		else if (c->GetOp() == '/')
 			ans << c->Division();
-		else
+		else if (c->GetOp() == '%')
 			ans << c->Modulo();
+		else 
+			ans << c->GetNum2();
+		
 
 
 		text->SetLabel(ans);
