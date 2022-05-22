@@ -125,6 +125,14 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023)
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
+		else if (id == 10010) {
+			if (!mtoggleNegative)
+				text->SetLabel("-" + text->GetLabel());
+			else
+				text->SetLabel(text->GetLabel().erase(0, 1));
+
+			mtoggleNegative = !mtoggleNegative;
+		}
 
 		else {
 			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));

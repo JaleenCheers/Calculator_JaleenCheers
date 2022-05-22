@@ -10,6 +10,7 @@ private:
 	float num1 = 0;
 	float num2 = 0;
 	char op;
+	bool mtoggleNegative = false;
 public:
 	// Destructor
 	~CalculatorProcessor();
