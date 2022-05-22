@@ -3,6 +3,7 @@
 
 CalculatorProcessor::CalculatorProcessor() {
 	mCalcProcessor = nullptr;
+	op = ' ';
 }
 CalculatorProcessor::~CalculatorProcessor()
 {
