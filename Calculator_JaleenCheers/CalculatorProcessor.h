@@ -10,6 +10,7 @@ private:
 	bool OperatorClicked = false;
 	float num1 = 0;
 	float num2 = 0;
+	char op;
 public:
 	// Destructor
 	~CalculatorProcessor();
@@ -27,6 +28,9 @@ public:
 
 	float GetNum2();
 	void SetNum2(float _num2);
+
+	char GetOp();
+	void SetOp(char _op);
 
 	static CalculatorProcessor* GetInstance();
 
