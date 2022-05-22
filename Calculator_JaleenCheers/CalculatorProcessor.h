@@ -37,6 +37,8 @@ public:
 	// Operand functions
 	float Addition();
 	float Subtraction();
+	float Multiplication();
+	
 
 	
 		
