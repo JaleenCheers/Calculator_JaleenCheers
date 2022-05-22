@@ -122,8 +122,14 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	int id = evt.GetId();
 
 	if (c->GetOperatorClicked()) {
-		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
-		c->SetOperatorClicked(false);
+
+		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023)
+			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
+
+		else {
+			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
+			c->SetOperatorClicked(false);
+		}
 
 	}
 
@@ -188,7 +194,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->Division();
 		else
 			ans << c->Modulo();
-		
+
 
 		text->SetLabel(ans);
 		c->SetOperatorClicked(false);
