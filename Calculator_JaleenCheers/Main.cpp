@@ -113,9 +113,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Same instance of Calculator Processor
 	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 
-	
+
 
 	wxString ans;
+
 
 	// Id of button clicked
 	int id = evt.GetId();
@@ -144,24 +145,27 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10020:      // /
 		c->SetOperatorClicked(true);
+		c->SetOp('/');
 		break;
 	case 10021:		 // x
-		
+		c->SetOp('x');
 		c->SetOperatorClicked(true);
 		break;
 	case 10022:		 // -
-		
+		c->SetOp('-');
 		c->SetOperatorClicked(true);
 		break;
 	case 10023:		 // +
-		
+		c->SetOp('+');
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10024:		 // =
 		c->SetNum2(wxAtof(text->GetLabel()));
-		text->Clear();
+		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
+		if (c->GetOp() == '+')
+			ans << c->Addition();
 		text->SetLabel(ans);
 		c->SetOperatorClicked(false);
 		break;
