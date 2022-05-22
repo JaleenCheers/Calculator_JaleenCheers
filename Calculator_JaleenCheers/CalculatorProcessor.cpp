@@ -66,4 +66,9 @@ float CalculatorProcessor::Multiplication()
 	float sum = num1 * num2;
 	return sum;
 }
+float CalculatorProcessor::Division()
+{
+	float quotient = num1 / num2;
+	return quotient;
+}
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;

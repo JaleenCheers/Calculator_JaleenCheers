@@ -38,7 +38,7 @@ public:
 	float Addition();
 	float Subtraction();
 	float Multiplication();
-	
+	float Division();
 
 	
 		
