@@ -1,9 +1,6 @@
 #pragma once
 #include <list>
-enum Operators
-{
-	Divide, Multiply, Subtract, Add, Mod
-};
+
  class CalculatorProcessor
 {
 private:
