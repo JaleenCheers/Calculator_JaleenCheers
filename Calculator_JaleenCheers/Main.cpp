@@ -200,6 +200,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 
 		text->SetLabel(ans);
+		c->SetOp(' ');
 		c->SetOperatorClicked(false);
 		break;
 
