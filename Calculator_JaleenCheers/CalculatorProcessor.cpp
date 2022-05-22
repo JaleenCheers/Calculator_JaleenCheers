@@ -56,4 +56,9 @@ float CalculatorProcessor::Addition()
 	float sum = num1 + num2;
 	return sum;
 }
+float CalculatorProcessor::Subtraction()
+{
+	float sum = num1 - num2;
+	return sum;
+}
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;
