@@ -41,6 +41,14 @@ void CalculatorProcessor::SetOp(char _op)
 {
 	op = _op;
 }
+bool CalculatorProcessor::GetToggleNegative()
+{
+	return mToggleNegative;
+}
+void CalculatorProcessor::SetToggleNegative(bool _mToggleNegative)
+{
+	mToggleNegative = _mToggleNegative;
+}
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
 

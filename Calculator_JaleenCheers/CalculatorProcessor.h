@@ -10,7 +10,7 @@ private:
 	float num1 = 0;
 	float num2 = 0;
 	char op;
-	bool mtoggleNegative = false;
+	bool mToggleNegative = false;
 public:
 	// Destructor
 	~CalculatorProcessor();
@@ -31,6 +31,9 @@ public:
 
 	char GetOp();
 	void SetOp(char _op);
+
+	bool GetToggleNegative();
+	void SetToggleNegative(bool _mToggleNegative);
 
 	static CalculatorProcessor* GetInstance();
 
