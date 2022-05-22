@@ -38,6 +38,7 @@ public:
 	float Subtraction();
 	float Multiplication();
 	float Division();
+	int Modulo();
 
 	
 		

@@ -15,7 +15,7 @@ EVT_BUTTON(10011, Main::OnButtonClicked)   // 8
 EVT_BUTTON(10012, Main::OnButtonClicked)   // 5
 EVT_BUTTON(10013, Main::OnButtonClicked)   // 2
 //EVT_BUTTON(10014, Main::OnButtonClicked) // By
-//EVT_BUTTON(10015, Main::OnButtonClicked) // MOD
+EVT_BUTTON(10015, Main::OnButtonClicked) // %
 EVT_BUTTON(10016, Main::OnButtonClicked)   // 7
 EVT_BUTTON(10017, Main::OnButtonClicked)   // 4
 EVT_BUTTON(10018, Main::OnButtonClicked)   // 1
@@ -143,6 +143,12 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 		mtoggleNegative = !mtoggleNegative;
 		break;
+	case 10015:      // %
+		c->SetOp('%');
+		c->SetNum1(wxAtof(text->GetLabel()));
+		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
+		c->SetOperatorClicked(true);
+		break;
 	case 10020:      // /
 		c->SetOp('/');
 		c->SetNum1(wxAtof(text->GetLabel()));
@@ -180,6 +186,9 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->Multiplication();
 		else if (c->GetOp() == '/')
 			ans << c->Division();
+		else
+			ans << c->Modulo();
+		
 
 		text->SetLabel(ans);
 		c->SetOperatorClicked(false);

@@ -71,4 +71,9 @@ float CalculatorProcessor::Division()
 	float quotient = num1 / num2;
 	return quotient;
 }
+int CalculatorProcessor::Modulo()
+{
+	int remainder = (int)num1 % (int)num2;
+	return remainder;
+}
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;
