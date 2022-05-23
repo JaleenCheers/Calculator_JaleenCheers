@@ -37,6 +37,9 @@ public:
 	bool GetToggleNegative();
 	void SetToggleNegative(bool _mToggleNegative);
 
+	bool GetEqualClicked();
+	void SetEqualClicked(bool _mEqualClicked);
+
 	static CalculatorProcessor* GetInstance();
 
 	// Operand functions

@@ -48,6 +48,14 @@ void CalculatorProcessor::SetToggleNegative(bool _mToggleNegative)
 {
 	mToggleNegative = _mToggleNegative;
 }
+bool CalculatorProcessor::GetEqualClicked()
+{
+	return mEqualClicked;
+}
+void CalculatorProcessor::SetEqualClicked(bool _mEqualClicked)
+{
+	mEqualClicked = _mEqualClicked;
+}
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
 
