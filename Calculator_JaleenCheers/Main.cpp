@@ -170,7 +170,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	switch (id)
 	{
-	case 10000:    // C
+	case 10000:    // C 
 		c->SetOperatorClicked(false);
 		c->SetNum1(0.0);
 		c->SetNum2(0.0);
