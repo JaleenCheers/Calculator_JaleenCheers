@@ -1,5 +1,10 @@
 #pragma once
 #include <math.h>
+#include "IBaseCommand.h"
+#include "AddCommand.h"
+#include "SubtractCommand.h"
+#include "MultiplyCommand.h"
+#include "DivisionCommand.h"
 
  class CalculatorProcessor
 {

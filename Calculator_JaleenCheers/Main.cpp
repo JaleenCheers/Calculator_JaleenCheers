@@ -114,6 +114,9 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Same instance of Calculator Processor
 	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 
+	// IBaseCommand children classes
+	
+
 	// wxString for calc output
 	wxString ans;
 
