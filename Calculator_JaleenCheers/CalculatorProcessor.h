@@ -5,12 +5,13 @@
 #include "SubtractCommand.h"
 #include "MultiplyCommand.h"
 #include "DivisionCommand.h"
+#include <vector>
 
- class CalculatorProcessor
+class CalculatorProcessor
 {
 private:
 	// Memberfields
-	CalculatorProcessor(); 
+	CalculatorProcessor();
 	static CalculatorProcessor* mCalcProcessor;
 	bool OperatorClicked = false;
 	float num1 = 0;
@@ -18,6 +19,8 @@ private:
 	char op;
 	bool mToggleNegative = false;
 	bool mEqualClicked = false;
+	std::vector<IBaseCommand> mCommands = std::vector<IBaseCommand>();
+
 public:
 	// Destructor
 	~CalculatorProcessor();
@@ -52,9 +55,9 @@ public:
 	float Subtraction();
 	float Multiplication();
 	float Division();
-	int Modulo(); 
+	int Modulo();
 	float SquareRoot(float _num);
 
-	
+
 };
 
