@@ -40,6 +40,8 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	SetBackgroundColour("#577590");
 	wxFont font(20, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_SLANT, wxFONTWEIGHT_BOLD, false);
 	SetFont(font);
+	wxFont textFont(40, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_MAX, wxFONTWEIGHT_BOLD, false);
+	text->SetFont(textFont);
 
 
 	// Make All the buttons
