@@ -100,7 +100,6 @@ Main::Main() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(
 	grid->Add(btnEquals, 1, wxALIGN_BOTTOM);
 
 
-
 	this->SetSizer(grid);
 	grid->Layout();
 }
@@ -166,7 +165,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			c->SetOperatorClicked(false);
 			c->SetToggleNegative(false);
 		}
-
 
 	}
 
@@ -253,7 +251,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		}
 		else
 			ans << c->GetNum2();
-
 
 
 		text->SetLabel(ans);

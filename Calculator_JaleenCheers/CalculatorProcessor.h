@@ -51,9 +51,5 @@ public:
 	float SquareRoot(float _num);
 
 	
-		
-	
-	
-	
 };
 
