@@ -135,12 +135,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		case 10018:
 		case 10004:
 			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
+			c->SetEqualClicked(false);
 			break;
-
-
-
-
-
 
 		default:
 			break;
@@ -154,6 +150,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
 
 		else if (id == 10010) {
+
+			if (wxAtof(text->GetLabel()) < 0)
+				c->SetToggleNegative(true);
+
 			if (!c->GetToggleNegative())
 				text->SetLabel("-" + text->GetLabel());
 			else
@@ -185,9 +185,15 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(ans);
 		break;
 	case 10010:     // +/-
+
+		if (wxAtof(text->GetLabel()) < 0)
+			c->SetToggleNegative(true);
+
+
 		if (c->GetOperatorClicked()) {
 			break;
 		}
+
 		if (!c->GetToggleNegative())
 			text->SetLabel("-" + text->GetLabel());
 		else
