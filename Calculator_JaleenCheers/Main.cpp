@@ -121,6 +121,33 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Id of button clicked
 	int id = evt.GetId();
 
+	if (c->GetEqualClicked()) {
+		switch (id)
+		{
+		case 10006:
+		case 10011:
+		case 10016:
+		case 10007:
+		case 10012:
+		case 10017:
+		case 10008:
+		case 10013:
+		case 10018:
+		case 10004:
+			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
+			break;
+
+
+
+
+
+
+		default:
+			break;
+		}
+	}
+
+
 	if (c->GetOperatorClicked()) {
 
 		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023)
@@ -139,7 +166,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			c->SetOperatorClicked(false);
 			c->SetToggleNegative(false);
 		}
-		
+
 
 	}
 
@@ -199,6 +226,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetOperatorClicked(true);
 		break;
 	case 10024:		 // =
+		c->SetEqualClicked(true);
 		c->SetNum2(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 
