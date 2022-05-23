@@ -12,6 +12,7 @@ private:
 	float num2 = 0;
 	char op;
 	bool mToggleNegative = false;
+	bool equalClicked = false;
 public:
 	// Destructor
 	~CalculatorProcessor();

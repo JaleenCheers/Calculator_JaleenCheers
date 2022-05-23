@@ -134,11 +134,12 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 			c->SetToggleNegative(!c->GetToggleNegative());
 		}
-		else if( id != 10005) {
+		else if (id != 10005) {
 			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 			c->SetOperatorClicked(false);
 			c->SetToggleNegative(false);
 		}
+		
 
 	}
 
@@ -210,11 +211,15 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->Multiplication();
 		else if (c->GetOp() == '/')
 			ans << c->Division();
-		else if (c->GetOp() == '%')
+		else if (c->GetOp() == '%') {
+			if (c->GetNum2() == 0)
+				c->SetNum2(1);
 			ans << c->Modulo();
-		else 
+			c->SetNum2(0);
+		}
+		else
 			ans << c->GetNum2();
-		
+
 
 
 		text->SetLabel(ans);
