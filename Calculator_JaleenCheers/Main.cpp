@@ -125,18 +125,20 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023)
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
+
 		else if (id == 10010) {
-			if (!mtoggleNegative)
+			if (!c->GetToggleNegative())
 				text->SetLabel("-" + text->GetLabel());
 			else
 				text->SetLabel(text->GetLabel().erase(0, 1));
 
-			mtoggleNegative = !mtoggleNegative;
+			c->SetToggleNegative(!c->GetToggleNegative());
 		}
 
 		else {
 			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 			c->SetOperatorClicked(false);
+			c->SetToggleNegative(false);
 		}
 
 	}
@@ -150,12 +152,14 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
 	case 10010: // +/-
-		if (!mtoggleNegative)
+		if (c->GetOperatorClicked())
+			break;
+		if (!c->GetToggleNegative())
 			text->SetLabel("-" + text->GetLabel());
 		else
 			text->SetLabel(text->GetLabel().erase(0, 1));
 
-		mtoggleNegative = !mtoggleNegative;
+		c->SetToggleNegative(!c->GetToggleNegative());
 		break;
 	case 10015:      // %
 		c->SetOp('%');
