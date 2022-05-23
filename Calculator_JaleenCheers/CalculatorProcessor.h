@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 
  class CalculatorProcessor
 {
@@ -43,6 +44,7 @@ public:
 	float Multiplication();
 	float Division();
 	int Modulo();
+	float SquareRoot(float _num);
 
 	
 		

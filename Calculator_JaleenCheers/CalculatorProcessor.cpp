@@ -2,7 +2,6 @@
 #include <string>
 
 CalculatorProcessor::CalculatorProcessor() {
-	mCalcProcessor = nullptr;
 	op = ' ';
 }
 CalculatorProcessor::~CalculatorProcessor()
@@ -83,5 +82,10 @@ int CalculatorProcessor::Modulo()
 {
 	int remainder = (int)num1 % (int)num2;
 	return remainder;
+}
+float CalculatorProcessor::SquareRoot(float _num)
+{
+	float root = sqrt(_num);
+	return root;
 }
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;
