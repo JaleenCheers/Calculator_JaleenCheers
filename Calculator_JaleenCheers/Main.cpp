@@ -5,7 +5,7 @@ EVT_BUTTON(10000, Main::OnButtonClicked)   // C
 //EVT_BUTTON(10002, Main::OnButtonClicked) // Bin
 //EVT_BUTTON(10003, Main::OnButtonClicked) // Hex
 EVT_BUTTON(10004, Main::OnButtonClicked)   // 0
-//EVT_BUTTON(10005, Main::OnButtonClicked) // Sqrt
+EVT_BUTTON(10005, Main::OnButtonClicked) // Sqrt
 EVT_BUTTON(10006, Main::OnButtonClicked)   // 9
 EVT_BUTTON(10007, Main::OnButtonClicked)   // 6
 EVT_BUTTON(10008, Main::OnButtonClicked)   // 3
@@ -132,8 +132,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 			c->SetToggleNegative(!c->GetToggleNegative());
 		}
-
-		else {
+		else if( id != 10005) {
 			text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 			c->SetOperatorClicked(false);
 			c->SetToggleNegative(false);
@@ -149,9 +148,16 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetNum2(0.0);
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
-	case 10010: // +/-
+	case 10005:
 		if (c->GetOperatorClicked())
+			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
+		ans << c->SquareRoot(wxAtof(text->GetLabel()));
+		text->SetLabel(ans);
+		break;
+	case 10010: // +/-
+		if (c->GetOperatorClicked()) {
 			break;
+		}
 		if (!c->GetToggleNegative())
 			text->SetLabel("-" + text->GetLabel());
 		else
