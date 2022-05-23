@@ -142,19 +142,19 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	switch (id)
 	{
-	case 10000: // C
+	case 10000:    // C
 		c->SetOperatorClicked(false);
 		c->SetNum1(0.0);
 		c->SetNum2(0.0);
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
-	case 10005:
+	case 10005:    // Sqrt
 		if (c->GetOperatorClicked())
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
 		ans << c->SquareRoot(wxAtof(text->GetLabel()));
 		text->SetLabel(ans);
 		break;
-	case 10010: // +/-
+	case 10010:     // +/-
 		if (c->GetOperatorClicked()) {
 			break;
 		}
