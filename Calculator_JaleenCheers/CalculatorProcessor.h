@@ -43,7 +43,7 @@ public:
 	float Subtraction();
 	float Multiplication();
 	float Division();
-	int Modulo();
+	int Modulo(); 
 	float SquareRoot(float _num);
 
 	
