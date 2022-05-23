@@ -113,10 +113,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Same instance of Calculator Processor
 	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 
-
-
+	// wxString for calc output
 	wxString ans;
-
 
 	// Id of button clicked
 	int id = evt.GetId();
