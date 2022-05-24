@@ -1,6 +1,7 @@
 #include "SubtractCommand.h"
 
-void SubtractCommand::Execute(float _num1, float _num2)
+float SubtractCommand::Execute(float _num1, float _num2)
 {
-		_num1 - _num2;
+	float sum = _num1 - _num2;
+	return sum;
 }
