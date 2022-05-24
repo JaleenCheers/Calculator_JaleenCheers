@@ -19,7 +19,7 @@ private:
 	char op;
 	bool mToggleNegative = false;
 	bool mEqualClicked = false;
-	std::vector<IBaseCommand> mCommands = std::vector<IBaseCommand>();
+	std::vector<IBaseCommand*> mCommands = std::vector<IBaseCommand*>();
 
 public:
 	// Destructor
@@ -57,6 +57,9 @@ public:
 	float Division();
 	int Modulo();
 	float SquareRoot(float _num);
+
+	// Add to vec function
+	void AddVecCommand(IBaseCommand* _command);
 
 
 };
