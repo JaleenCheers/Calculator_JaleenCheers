@@ -12,12 +12,12 @@ public:
 	int mFieldWidth = 5;
 	int mFieldHeight = 5;
 	wxTextCtrl* text = nullptr;
-	
+
 	// buttons
 	wxButton* btn0 = nullptr;
 	wxButton* btn1 = nullptr;
 	wxButton* btn2 = nullptr;
-	wxButton* btn3 = nullptr; 
+	wxButton* btn3 = nullptr;
 	wxButton* btn4 = nullptr;
 	wxButton* btn5 = nullptr;
 	wxButton* btn6 = nullptr;
@@ -26,7 +26,7 @@ public:
 	wxButton* btn9 = nullptr;
 	wxButton* btnPlus = nullptr;
 	wxButton* btnMinus = nullptr;
-	wxButton* btnDivide = nullptr; 
+	wxButton* btnDivide = nullptr;
 	wxButton* btnMultiply = nullptr;
 	wxButton* btnSqrt = nullptr;
 	wxButton* btnEquals = nullptr;
@@ -39,11 +39,12 @@ public:
 	wxButton* btnJTC = nullptr;
 	wxButton* btnClear = nullptr;
 	wxButton* btnNegative = nullptr;
-	
+
 	void OnButtonClicked(wxCommandEvent& evt);
 
 private:
-	
+	wxString AnsToString(wxString ans);
+
 
 	wxDECLARE_EVENT_TABLE();
 
