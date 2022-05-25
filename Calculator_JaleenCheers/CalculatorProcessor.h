@@ -5,6 +5,7 @@
 #include "SubtractCommand.h"
 #include "MultiplyCommand.h"
 #include "DivisionCommand.h"
+#include "ModuloCommand.h"
 #include <vector>
 
 class CalculatorProcessor

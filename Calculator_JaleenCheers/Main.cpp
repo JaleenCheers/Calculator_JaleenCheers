@@ -209,6 +209,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetToggleNegative(!c->GetToggleNegative());
 		break;
 	case 10015:      // %
+		c->AddVecCommand(new ModuloCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
