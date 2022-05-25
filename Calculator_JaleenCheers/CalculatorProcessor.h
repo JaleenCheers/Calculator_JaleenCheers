@@ -48,6 +48,10 @@ public:
 	bool GetEqualClicked();
 	void SetEqualClicked(bool _mEqualClicked);
 
+	std::vector<IBaseCommand*> GetCommandVec();
+
+	
+
 	static CalculatorProcessor* GetInstance();
 
 	// Operand functions

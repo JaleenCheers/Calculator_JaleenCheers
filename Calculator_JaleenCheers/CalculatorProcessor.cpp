@@ -60,6 +60,10 @@ void CalculatorProcessor::SetEqualClicked(bool _mEqualClicked)
 {
 	mEqualClicked = _mEqualClicked;
 }
+std::vector<IBaseCommand*> CalculatorProcessor::GetCommandVec()
+{
+	return mCommands;
+}
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
 
