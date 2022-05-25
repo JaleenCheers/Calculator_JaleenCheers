@@ -182,17 +182,20 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	switch (id)
 	{
-	case 10000:    // C  // multip op bool change maybe
+	case 10000:    // C  
 		c->SetOperatorClicked(false);
+		c->SetEqualClicked(false);
+		c->SetMultipleOperators(false);
 		c->SetNum1(0.0);
 		c->SetNum2(0.0);
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
-	case 10005:    // Sqrt // multip op bool change maybe
+	case 10005:    // Sqrt 
 		if (c->GetOperatorClicked())
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
 		ans << c->SquareRoot(wxAtof(text->GetLabel()));
 		text->SetLabel(ans);
+		c->SetMultipleOperators(false);
 		break;
 	case 10010:     // +/-
 
@@ -281,19 +284,24 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetAtFirstCommandVec()->GetOp() == '/')
 			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());*/
+		if (c->GetCommandVec().size() > 0) {
 
-		if (c->GetAtFirstCommandVec()->GetOp() == '%') {
-			if (c->GetNum2() == 0)
-				c->SetNum2(1);
-			ans << c->Modulo();
-			c->SetNum2(0);
-		}
-		else
-			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
+			if (c->GetAtFirstCommandVec()->GetOp() == '%') {
+				if (c->GetNum2() == 0)
+					c->SetNum2(1);
+				ans << c->Modulo();
+				c->SetNum2(0);
+			}
+			else
+				ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
 			//ans << c->GetNum2();
 
 
-		c->PopFront();
+			c->PopFront();
+		}
+		else
+			ans << text->GetLabel();
+
 		text->SetLabel(ans);
 		c->SetOperatorClicked(false);
 		break;
@@ -302,6 +310,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		break;
 	}
-	
+
 	evt.Skip();
 }
