@@ -14,12 +14,11 @@ private:
 	// Memberfields
 	CalculatorProcessor();
 	static CalculatorProcessor* mCalcProcessor;
+	float num1 = 0;
+	float num2 = 0;
 	bool operatorClicked = false;
 	bool multipleOperators = false;
 	bool changedOperator = false;
-	float num1 = 0;
-	float num2 = 0;
-	char op;
 	bool mToggleNegative = false;
 	bool mEqualClicked = false;
 	std::vector<IBaseCommand*> mCommands = std::vector<IBaseCommand*>();

@@ -43,9 +43,6 @@ public:
 	void OnButtonClicked(wxCommandEvent& evt);
 
 private:
-	wxString AnsToString(wxString ans);
-
-
 	wxDECLARE_EVENT_TABLE();
 
 

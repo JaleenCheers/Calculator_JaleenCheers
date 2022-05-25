@@ -2,11 +2,7 @@
 #include <string>
 
 CalculatorProcessor::CalculatorProcessor() {
-	op = ' ';
-	/*mCommands.push_back(new AddCommand);
-	mCommands.push_back(new SubtractCommand);
-	mCommands.push_back(new MultiplyCommand);
-	mCommands.push_back(new DivisionCommand);*/
+	
 }
 CalculatorProcessor::~CalculatorProcessor()
 {
