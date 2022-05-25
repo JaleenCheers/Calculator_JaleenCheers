@@ -275,15 +275,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetNum2(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 
-
-		/*if (c->GetAtFirstCommandVec()->GetOp() == '+')
-			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetAtFirstCommandVec()->GetOp() == '-')
-			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetAtFirstCommandVec()->GetOp() == 'x')
-			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetAtFirstCommandVec()->GetOp() == '/')
-			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());*/
 		if (c->GetCommandVec().size() > 0) {
 
 			if (c->GetAtFirstCommandVec()->GetOp() == '%') {
@@ -294,15 +285,13 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			}
 			else
 				ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
-			//ans << c->GetNum2();
-
 
 			c->PopFront();
 		}
 		else
-			ans << text->GetLabel();
+			ans << c->GetNum2();
 
-		text->SetLabel(ans);
+			text->SetLabel(ans);
 		c->SetOperatorClicked(false);
 		break;
 
