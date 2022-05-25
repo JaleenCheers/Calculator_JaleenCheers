@@ -3,10 +3,10 @@
 
 CalculatorProcessor::CalculatorProcessor() {
 	op = ' ';
-	mCommands.push_back(new AddCommand);
+	/*mCommands.push_back(new AddCommand);
 	mCommands.push_back(new SubtractCommand);
 	mCommands.push_back(new MultiplyCommand);
-	mCommands.push_back(new DivisionCommand);
+	mCommands.push_back(new DivisionCommand);*/
 }
 CalculatorProcessor::~CalculatorProcessor()
 {
@@ -104,8 +104,12 @@ float CalculatorProcessor::SquareRoot(float _num)
 	float root = sqrt(_num);
 	return root;
 }
-//void CalculatorProcessor::AddVecCommand(IBaseCommand* _command)
-//{
-//	mCommands.push_back(_command);
-//}
+void CalculatorProcessor::AddVecCommand(IBaseCommand* _command)
+{
+	mCommands.push_back(_command);
+}
+void CalculatorProcessor::ClearVecCommands()
+{
+	mCommands.clear();
+}
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;

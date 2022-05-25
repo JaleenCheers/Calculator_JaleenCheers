@@ -148,18 +148,27 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	if (c->GetOperatorClicked()) {
 
-		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023)
+		// Changed operator clicked
+		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023) {
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
+			c->ClearVecCommands();
+		}
 
+		// Toggle negative if an operator is already clicked
 		else if (id == 10010) {
 
 			if (wxAtof(text->GetLabel()) < 0)
 				c->SetToggleNegative(true);
 
-			if (!c->GetToggleNegative())
+			if (!c->GetToggleNegative()) {
 				text->SetLabel("-" + text->GetLabel());
-			else
+				c->SetNum1(wxAtof(text->GetLabel()));
+
+			}
+			else {
 				text->SetLabel(text->GetLabel().erase(0, 1));
+				c->SetNum1(wxAtof(text->GetLabel()));
+			}
 
 			c->SetToggleNegative(!c->GetToggleNegative());
 		}
@@ -210,24 +219,32 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10020:      // /
 		c->SetOp('/');
+
+		c->AddVecCommand(new DivisionCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10021:		 // x
 		c->SetOp('x');
+
+		c->AddVecCommand(new MultiplyCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10022:		 // -
 		c->SetOp('-');
+
+		c->AddVecCommand(new SubtractCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10023:		 // +
 		c->SetOp('+');
+
+		c->AddVecCommand(new AddCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
@@ -238,14 +255,14 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 
 
-		if (c->GetOp() == '+')
+		if (c->GetCommandVec()[0]->GetOp() == '+')
 			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetOp() == '-')
-			ans << c->GetCommandVec()[1]->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetOp() == 'x')
-			ans << c->GetCommandVec()[2]->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetOp() == '/')
-			ans << c->GetCommandVec()[3]->Execute(c->GetNum1(), c->GetNum2());
+		else if (c->GetCommandVec()[0]->GetOp() == '-')
+			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
+		else if (c->GetCommandVec()[0]->GetOp() == 'x')
+			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
+		else if (c->GetCommandVec()[0]->GetOp() == '/')
+			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetOp() == '%') {
 			if (c->GetNum2() == 0)
 				c->SetNum2(1);
@@ -256,7 +273,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->GetNum2();
 
 
-
+		c->ClearVecCommands();
 		text->SetLabel(ans);
 		c->SetOp(' ');
 		c->SetOperatorClicked(false);
