@@ -64,6 +64,10 @@ std::vector<IBaseCommand*> CalculatorProcessor::GetCommandVec()
 {
 	return mCommands;
 }
+IBaseCommand* CalculatorProcessor::GetAtFirstCommandVec()
+{
+	return mCommands[0];
+}
 CalculatorProcessor* CalculatorProcessor::GetInstance()
 {
 

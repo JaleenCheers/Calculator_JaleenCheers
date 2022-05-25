@@ -255,14 +255,14 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 
 
-		if (c->GetCommandVec()[0]->GetOp() == '+')
-			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetCommandVec()[0]->GetOp() == '-')
-			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetCommandVec()[0]->GetOp() == 'x')
-			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetCommandVec()[0]->GetOp() == '/')
-			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
+		if (c->GetAtFirstCommandVec()->GetOp() == '+')
+			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
+		else if (c->GetAtFirstCommandVec()->GetOp() == '-')
+			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
+		else if (c->GetAtFirstCommandVec()->GetOp() == 'x')
+			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
+		else if (c->GetAtFirstCommandVec()->GetOp() == '/')
+			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetOp() == '%') {
 			if (c->GetNum2() == 0)
 				c->SetNum2(1);

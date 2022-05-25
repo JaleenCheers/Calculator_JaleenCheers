@@ -49,6 +49,7 @@ public:
 	void SetEqualClicked(bool _mEqualClicked);
 
 	std::vector<IBaseCommand*> GetCommandVec();
+	IBaseCommand* GetAtFirstCommandVec();
 
 	
 
