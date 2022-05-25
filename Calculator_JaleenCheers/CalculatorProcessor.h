@@ -39,8 +39,6 @@ public:
 	float GetNum2();
 	void SetNum2(float _num2);
 
-	char GetOp();
-	void SetOp(char _op);
 
 	bool GetToggleNegative();
 	void SetToggleNegative(bool _mToggleNegative);

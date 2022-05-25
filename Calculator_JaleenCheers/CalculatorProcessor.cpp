@@ -36,14 +36,6 @@ void CalculatorProcessor::SetNum2(float _num2)
 {
 	num2 = _num2;
 }
-char CalculatorProcessor::GetOp()
-{
-	return op;
-}
-void CalculatorProcessor::SetOp(char _op)
-{
-	op = _op;
-}
 bool CalculatorProcessor::GetToggleNegative()
 {
 	return mToggleNegative;

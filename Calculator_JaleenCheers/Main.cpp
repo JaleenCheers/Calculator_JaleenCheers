@@ -114,9 +114,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Same instance of Calculator Processor
 	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 
-	// IBaseCommand children classes
-
-
 	// wxString for calc output
 	wxString ans;
 
@@ -212,38 +209,29 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetToggleNegative(!c->GetToggleNegative());
 		break;
 	case 10015:      // %
-		c->SetOp('%');
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10020:      // /
-		c->SetOp('/');
-
 		c->AddVecCommand(new DivisionCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10021:		 // x
-		c->SetOp('x');
-
 		c->AddVecCommand(new MultiplyCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10022:		 // -
-		c->SetOp('-');
-
 		c->AddVecCommand(new SubtractCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
 		break;
 	case 10023:		 // +
-		c->SetOp('+');
-
 		c->AddVecCommand(new AddCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
@@ -263,7 +251,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetAtFirstCommandVec()->GetOp() == '/')
 			ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2());
-		else if (c->GetOp() == '%') {
+		else if (c->GetAtFirstCommandVec()->GetOp() == '%') {
 			if (c->GetNum2() == 0)
 				c->SetNum2(1);
 			ans << c->Modulo();
@@ -275,7 +263,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 		c->PopFront();
 		text->SetLabel(ans);
-		c->SetOp(' ');
 		c->SetOperatorClicked(false);
 		break;
 
