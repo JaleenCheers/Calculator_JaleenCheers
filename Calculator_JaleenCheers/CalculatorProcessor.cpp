@@ -14,11 +14,19 @@ CalculatorProcessor::~CalculatorProcessor()
 }
 bool CalculatorProcessor::GetOperatorClicked()
 {
-	return OperatorClicked;
+	return operatorClicked;
 }
 void CalculatorProcessor::SetOperatorClicked(bool op)
 {
-	OperatorClicked = op;
+	operatorClicked = op;
+}
+bool CalculatorProcessor::GetMultipleOperators()
+{
+	return multipleOperators;
+}
+void CalculatorProcessor::SetMultipleOperators(bool op)
+{
+	multipleOperators = op;
 }
 float CalculatorProcessor::GetNum1()
 {

@@ -120,6 +120,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	// Id of button clicked
 	int id = evt.GetId();
 
+
+	// If answer is displaying and a number button is clicked clear the screen
 	if (c->GetEqualClicked()) {
 		switch (id)
 		{
@@ -271,7 +273,6 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		break;
 	}
-
-
+	
 	evt.Skip();
 }

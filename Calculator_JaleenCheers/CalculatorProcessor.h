@@ -14,7 +14,8 @@ private:
 	// Memberfields
 	CalculatorProcessor();
 	static CalculatorProcessor* mCalcProcessor;
-	bool OperatorClicked = false;
+	bool operatorClicked = false;
+	bool multipleOperators = false;
 	float num1 = 0;
 	float num2 = 0;
 	char op;
@@ -33,6 +34,9 @@ public:
 	// Getters and Setters
 	bool GetOperatorClicked();
 	void SetOperatorClicked(bool op);
+
+	bool GetMultipleOperators();
+	void SetMultipleOperators(bool op);
 
 	float GetNum1();
 	void SetNum1(float _num1);
