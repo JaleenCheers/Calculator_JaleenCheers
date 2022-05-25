@@ -13,7 +13,7 @@ bool CalculatorProcessor::GetOperatorClicked()
 	return operatorClicked;
 }
 void CalculatorProcessor::SetOperatorClicked(bool op)
-{
+{ 
 	operatorClicked = op;
 }
 bool CalculatorProcessor::GetMultipleOperators()
