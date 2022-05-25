@@ -15,7 +15,7 @@ bool CalculatorProcessor::GetOperatorClicked()
 void CalculatorProcessor::SetOperatorClicked(bool op)
 { 
 	operatorClicked = op;
-}
+} 
 bool CalculatorProcessor::GetMultipleOperators()
 {
 	return multipleOperators;
