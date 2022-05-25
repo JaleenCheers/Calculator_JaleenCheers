@@ -96,8 +96,8 @@ float CalculatorProcessor::SquareRoot(float _num)
 	float root = sqrt(_num);
 	return root;
 }
-void CalculatorProcessor::AddVecCommand(IBaseCommand* _command)
-{
-	mCommands.push_back(_command);
-}
+//void CalculatorProcessor::AddVecCommand(IBaseCommand* _command)
+//{
+//	mCommands.push_back(_command);
+//}
 CalculatorProcessor* ::CalculatorProcessor::mCalcProcessor = nullptr;

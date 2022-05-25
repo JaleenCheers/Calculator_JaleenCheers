@@ -59,7 +59,7 @@ public:
 	float SquareRoot(float _num);
 
 	// Add to vec function
-	void AddVecCommand(IBaseCommand* _command);
+	//void AddVecCommand(IBaseCommand* _command);
 
 
 };
