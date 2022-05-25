@@ -112,6 +112,10 @@ void CalculatorProcessor::AddVecCommand(IBaseCommand* _command)
 {
 	mCommands.push_back(_command);
 }
+void CalculatorProcessor::PopFront()
+{
+	auto it = mCommands.erase(mCommands.begin());
+}
 void CalculatorProcessor::ClearVecCommands()
 {
 	mCommands.clear();

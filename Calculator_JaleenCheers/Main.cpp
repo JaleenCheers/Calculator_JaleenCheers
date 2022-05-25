@@ -273,7 +273,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			ans << c->GetNum2();
 
 
-		c->ClearVecCommands();
+		c->PopFront();
 		text->SetLabel(ans);
 		c->SetOp(' ');
 		c->SetOperatorClicked(false);

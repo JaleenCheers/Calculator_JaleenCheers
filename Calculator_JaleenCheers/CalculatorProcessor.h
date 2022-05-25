@@ -63,8 +63,9 @@ public:
 	int Modulo();
 	float SquareRoot(float _num);
 
-	// Add and clear vec functions
+	// Add, Remove, and clear vec functions
 	void AddVecCommand(IBaseCommand* _command);
+	void PopFront();
 	void ClearVecCommands();
 
 
