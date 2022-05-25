@@ -16,6 +16,7 @@ private:
 	static CalculatorProcessor* mCalcProcessor;
 	bool operatorClicked = false;
 	bool multipleOperators = false;
+	bool changedOperator = false;
 	float num1 = 0;
 	float num2 = 0;
 	char op;
@@ -37,6 +38,9 @@ public:
 
 	bool GetMultipleOperators();
 	void SetMultipleOperators(bool op);
+
+	bool GetChangedOperator();
+	void SetChangedOperator(bool op);
 
 	float GetNum1();
 	void SetNum1(float _num1);

@@ -150,7 +150,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		// Changed operator clicked
 		if (id == 10015 || id == 10020 || id == 10021 || id == 10022 || id == 10023) {
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
-			c->ClearVecCommands();
+			c->SetChangedOperator(true);
 		}
 
 		// Toggle negative if an operator is already clicked
@@ -186,6 +186,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetOperatorClicked(false);
 		c->SetEqualClicked(false);
 		c->SetMultipleOperators(false);
+		c->SetChangedOperator(false);
+		c->ClearVecCommands();
 		c->SetNum1(0.0);
 		c->SetNum2(0.0);
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
@@ -215,63 +217,92 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetToggleNegative(!c->GetToggleNegative());
 		break;
 	case 10015:      // %
-		if (c->GetMultipleOperators()) {
+		if (c->GetMultipleOperators() && !c->GetChangedOperator()) {
 			c->SetNum2(wxAtof(text->GetLabel()));
+
 			text->SetLabel(ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2()));
 			c->PopFront();
+
+
 		}
+
+		if (c->GetCommandVec().size() > 0)
+			c->ClearVecCommands();
+
 		c->AddVecCommand(new ModuloCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
+		c->SetChangedOperator(false);
 		break;
 	case 10020:      // /
-		if (c->GetMultipleOperators()) {
+		if (c->GetMultipleOperators() && !c->GetChangedOperator()) {
 			c->SetNum2(wxAtof(text->GetLabel()));
 			text->SetLabel(ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2()));
 			c->PopFront();
 		}
+
+		if (c->GetCommandVec().size() > 0)
+			c->ClearVecCommands();
+
 		c->AddVecCommand(new DivisionCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
+		c->SetChangedOperator(false);
 		break;
 	case 10021:		 // x
-		if (c->GetMultipleOperators()) {
+		if (c->GetMultipleOperators() && !c->GetChangedOperator()) {
 			c->SetNum2(wxAtof(text->GetLabel()));
 			text->SetLabel(ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2()));
 			c->PopFront();
 		}
+	
+		if (c->GetCommandVec().size() > 0)
+			c->ClearVecCommands();
+
 		c->AddVecCommand(new MultiplyCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
+		c->SetChangedOperator(false);
 		break;
 	case 10022:		 // -
-		if (c->GetMultipleOperators()) {
+		if (c->GetMultipleOperators() && !c->GetChangedOperator()) {
 			c->SetNum2(wxAtof(text->GetLabel()));
 			text->SetLabel(ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2()));
 			c->PopFront();
 		}
+
+		if (c->GetCommandVec().size() > 0)
+			c->ClearVecCommands();
+
 		c->AddVecCommand(new SubtractCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
+		c->SetChangedOperator(false);
 		break;
 	case 10023:		 // +
-		if (c->GetMultipleOperators()) {
+		if (c->GetMultipleOperators() && !c->GetChangedOperator()) {
 			c->SetNum2(wxAtof(text->GetLabel()));
 			text->SetLabel(ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2()));
 			c->PopFront();
 		}
+
+		if (c->GetCommandVec().size() > 0)
+			c->ClearVecCommands();
+
 		c->AddVecCommand(new AddCommand);
 		c->SetNum1(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel() + dynamic_cast<wxButton*>(evt.GetEventObject())->GetLabel());
 		c->SetOperatorClicked(true);
+		c->SetChangedOperator(false);
 		break;
 	case 10024:		 // =
 		c->SetEqualClicked(true);
 		c->SetMultipleOperators(false);
+		c->SetChangedOperator(false);
 		c->SetNum2(wxAtof(text->GetLabel()));
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 

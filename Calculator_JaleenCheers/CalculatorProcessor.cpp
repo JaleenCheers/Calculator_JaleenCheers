@@ -28,6 +28,14 @@ void CalculatorProcessor::SetMultipleOperators(bool op)
 {
 	multipleOperators = op;
 }
+bool CalculatorProcessor::GetChangedOperator()
+{
+	return changedOperator;
+}
+void CalculatorProcessor::SetChangedOperator(bool op)
+{
+	changedOperator = op;
+}
 float CalculatorProcessor::GetNum1()
 {
 	return num1;
