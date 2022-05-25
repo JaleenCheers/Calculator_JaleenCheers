@@ -115,7 +115,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	CalculatorProcessor* c = CalculatorProcessor::GetInstance();
 
 	// IBaseCommand children classes
-	
+
 
 	// wxString for calc output
 	wxString ans;
@@ -239,13 +239,13 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 
 		if (c->GetOp() == '+')
-			ans << c->Addition();
+			ans << c->GetCommandVec()[0]->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetOp() == '-')
-			ans << c->Subtraction();
+			ans << c->GetCommandVec()[1]->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetOp() == 'x')
-			ans << c->Multiplication();
+			ans << c->GetCommandVec()[2]->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetOp() == '/')
-			ans << c->Division();
+			ans << c->GetCommandVec()[3]->Execute(c->GetNum1(), c->GetNum2());
 		else if (c->GetOp() == '%') {
 			if (c->GetNum2() == 0)
 				c->SetNum2(1);
@@ -254,6 +254,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		}
 		else
 			ans << c->GetNum2();
+
 
 
 		text->SetLabel(ans);
