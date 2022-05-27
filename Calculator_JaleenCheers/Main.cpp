@@ -209,7 +209,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	switch (id)
 	{
-	case 10000:    // C  
+	case 10000:    // C   
 		c->SetHexClicked(false);
 		c->SetBinaryClicked(false);
 		c->SetOperatorClicked(false);
