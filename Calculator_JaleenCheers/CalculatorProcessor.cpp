@@ -80,6 +80,14 @@ void CalculatorProcessor::SetHexClicked(bool _hex)
 {
 	mHexClicked = _hex;
 }
+float CalculatorProcessor::GetNumBeforeBin()
+{
+	return numBeforeBin;
+}
+void CalculatorProcessor::SetNumBeforeBin(float _beforeBin)
+{
+	numBeforeBin = _beforeBin;
+}
 std::vector<IBaseCommand*> CalculatorProcessor::GetCommandVec()
 {
 	return mCommands;

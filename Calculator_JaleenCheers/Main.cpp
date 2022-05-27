@@ -125,6 +125,29 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	int id = evt.GetId();
 
 
+	// Clear the screen when another button is clicked after displaying Binary or Hexadecimal;
+	if (id != 10001) {
+		if (id != 10002) {
+			if (id != 10003) {
+				if (c->GetHexClicked() || c->GetBinaryClicked()) {
+					text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
+					c->SetHexClicked(false);
+					c->SetBinaryClicked(false);
+					c->SetOperatorClicked(false);
+					c->SetEqualClicked(false);
+					c->SetMultipleOperators(false);
+					c->SetChangedOperator(false);
+					c->ClearVecCommands();
+					c->SetNum1(0.0);
+					c->SetNum2(0.0);
+
+				}
+			}
+		}
+
+	}
+
+
 	// If answer is displaying and a number button is clicked clear the screen
 	if (c->GetEqualClicked()) {
 		switch (id)
@@ -187,6 +210,8 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 	switch (id)
 	{
 	case 10000:    // C  
+		c->SetHexClicked(false);
+		c->SetBinaryClicked(false);
 		c->SetOperatorClicked(false);
 		c->SetEqualClicked(false);
 		c->SetMultipleOperators(false);
@@ -197,12 +222,24 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
 	case 10001:    // Dec
+		if (c->GetHexClicked())
+			ans << wxHexToDec(text->GetLabel());
+		else if (c->GetBinaryClicked()) {
+			ans << c->GetNumBeforeBin();
+			c->SetNumBeforeBin(0);
 
+		}
+		else
+			ans << wxAtof(text->GetLabel());
 
-		ans << wxHexToDec(text->GetLabel());
 		text->SetLabel(ans);
+		c->SetHexClicked(false);
+		c->SetBinaryClicked(false);
 		break;
 	case 10002:    // BIN
+		c->SetHexClicked(false);
+		c->SetBinaryClicked(true);
+		c->SetNumBeforeBin(wxAtof(text->GetLabel()));
 		str = std::bitset<32>(wxAtof(text->GetLabel())).to_string();
 
 		for (int i = 0; i < 32; ++i) {
@@ -215,9 +252,14 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		break;
 
 	case 10003:    // Hex
-		text->SetLabel(wxDecToHex(wxAtof(text->GetLabel())));
+		if (c->GetBinaryClicked())
+			text->SetLabel(wxDecToHex(c->GetNumBeforeBin()));
+		else
+			text->SetLabel(wxDecToHex(wxAtof(text->GetLabel())));
 
 
+		c->SetBinaryClicked(false);
+		c->SetHexClicked(true);
 		break;
 	case 10005:    // Sqrt 
 		if (c->GetOperatorClicked())

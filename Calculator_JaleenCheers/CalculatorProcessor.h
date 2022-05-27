@@ -16,6 +16,7 @@ private:
 	static CalculatorProcessor* mCalcProcessor;
 	float num1 = 0;
 	float num2 = 0;
+	float numBeforeBin = 0;
 	bool operatorClicked = false;
 	bool multipleOperators = false;
 	bool changedOperator = false;
@@ -61,6 +62,9 @@ public:
 
 	bool GetHexClicked();
 	void SetHexClicked(bool _hex);
+
+	float GetNumBeforeBin();
+	void SetNumBeforeBin(float _beforeBin);
 
 
 
