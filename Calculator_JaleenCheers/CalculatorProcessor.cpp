@@ -12,25 +12,25 @@ bool CalculatorProcessor::GetOperatorClicked()
 {
 	return operatorClicked;
 }
-void CalculatorProcessor::SetOperatorClicked(bool op)
+void CalculatorProcessor::SetOperatorClicked(bool _op)
 { 
-	operatorClicked = op;
+	operatorClicked = _op;
 } 
 bool CalculatorProcessor::GetMultipleOperators()
 {
 	return multipleOperators;
 }
-void CalculatorProcessor::SetMultipleOperators(bool op)
+void CalculatorProcessor::SetMultipleOperators(bool _op)
 {
-	multipleOperators = op;
+	multipleOperators = _op;
 }
 bool CalculatorProcessor::GetChangedOperator()
 {
 	return changedOperator;
 }
-void CalculatorProcessor::SetChangedOperator(bool op)
+void CalculatorProcessor::SetChangedOperator(bool _op)
 {
-	changedOperator = op;
+	changedOperator = _op;
 }
 float CalculatorProcessor::GetNum1()
 {
@@ -63,6 +63,22 @@ bool CalculatorProcessor::GetEqualClicked()
 void CalculatorProcessor::SetEqualClicked(bool _mEqualClicked)
 {
 	mEqualClicked = _mEqualClicked;
+}
+bool CalculatorProcessor::GetBinaryClicked()
+{
+	return mBinaryClicked;
+}
+void CalculatorProcessor::SetBinaryClicked(bool _bin)
+{
+	mBinaryClicked = _bin;
+}
+bool CalculatorProcessor::GetHexClicked()
+{
+	return mHexClicked;
+}
+void CalculatorProcessor::SetHexClicked(bool _hex)
+{
+	mHexClicked = _hex;
 }
 std::vector<IBaseCommand*> CalculatorProcessor::GetCommandVec()
 {

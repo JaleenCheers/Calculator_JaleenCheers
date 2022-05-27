@@ -35,13 +35,13 @@ public:
 
 	// Getters and Setters
 	bool GetOperatorClicked();
-	void SetOperatorClicked(bool op);
+	void SetOperatorClicked(bool _op);
 
 	bool GetMultipleOperators();
-	void SetMultipleOperators(bool op);
+	void SetMultipleOperators(bool _op);
 
 	bool GetChangedOperator();
-	void SetChangedOperator(bool op);
+	void SetChangedOperator(bool _op);
 
 	float GetNum1();
 	void SetNum1(float _num1);
@@ -55,6 +55,15 @@ public:
 
 	bool GetEqualClicked();
 	void SetEqualClicked(bool _mEqualClicked);
+
+	bool GetBinaryClicked();
+	void SetBinaryClicked(bool _bin);
+
+	bool GetHexClicked();
+	void SetHexClicked(bool _hex);
+
+
+
 
 	std::vector<IBaseCommand*> GetCommandVec();
 	IBaseCommand* GetAtFirstCommandVec();
