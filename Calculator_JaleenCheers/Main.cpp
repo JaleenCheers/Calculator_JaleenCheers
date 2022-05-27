@@ -1,9 +1,9 @@
 #include "Main.h"
 wxBEGIN_EVENT_TABLE(Main, wxFrame)
 EVT_BUTTON(10000, Main::OnButtonClicked)   // C
-//EVT_BUTTON(10001, Main::OnButtonClicked) // Dec
-//EVT_BUTTON(10002, Main::OnButtonClicked) // Bin
-//EVT_BUTTON(10003, Main::OnButtonClicked) // Hex
+EVT_BUTTON(10001, Main::OnButtonClicked) // Dec
+EVT_BUTTON(10002, Main::OnButtonClicked) // Bin
+EVT_BUTTON(10003, Main::OnButtonClicked) // Hex
 EVT_BUTTON(10004, Main::OnButtonClicked)   // 0
 EVT_BUTTON(10005, Main::OnButtonClicked) // Sqrt
 EVT_BUTTON(10006, Main::OnButtonClicked)   // 9
@@ -116,6 +116,10 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 
 	// wxString for calc output
 	wxString ans;
+	std::string str;
+
+
+
 
 	// Id of button clicked
 	int id = evt.GetId();
@@ -192,6 +196,29 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		c->SetNum2(0.0);
 		text->SetLabel(text->GetLabel().erase(0, text->GetLabel().size()));
 		break;
+	case 10001:    // Dec
+
+
+		ans << wxHexToDec(text->GetLabel());
+		text->SetLabel(ans);
+		break;
+	case 10002:    // BIN
+		str = std::bitset<32>(wxAtof(text->GetLabel())).to_string();
+
+		for (int i = 0; i < 32; ++i) {
+			if (stoi(str.substr(i)) != stoi(str)) {
+				str = str.substr(i - 1);
+				text->SetLabel(str);
+				break;
+			}
+		}
+		break;
+
+	case 10003:    // Hex
+		text->SetLabel(wxDecToHex(wxAtof(text->GetLabel())));
+
+
+		break;
 	case 10005:    // Sqrt 
 		if (c->GetOperatorClicked())
 			text->SetLabel(text->GetLabel().erase(text->GetLabel().size() - 1, text->GetLabel().size()));
@@ -257,7 +284,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 			text->SetLabel(ans << c->GetAtFirstCommandVec()->Execute(c->GetNum1(), c->GetNum2()));
 			c->PopFront();
 		}
-	
+
 		if (c->GetCommandVec().size() > 0)
 			c->ClearVecCommands();
 
@@ -322,7 +349,7 @@ void Main::OnButtonClicked(wxCommandEvent& evt)
 		else
 			ans << c->GetNum2();
 
-			text->SetLabel(ans);
+		text->SetLabel(ans);
 		c->SetOperatorClicked(false);
 		break;
 

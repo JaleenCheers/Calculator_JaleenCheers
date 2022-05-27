@@ -21,6 +21,8 @@ private:
 	bool changedOperator = false;
 	bool mToggleNegative = false;
 	bool mEqualClicked = false;
+	bool mBinaryClicked = false;
+	bool mHexClicked = false;
 	std::vector<IBaseCommand*> mCommands = std::vector<IBaseCommand*>();
 
 public:

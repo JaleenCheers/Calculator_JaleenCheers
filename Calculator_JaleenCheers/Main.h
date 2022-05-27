@@ -3,6 +3,8 @@
 #include "ButtonFactory.h"
 #include "CalculatorProcessor.h"
 #include "IBaseCommand.h"
+#include <bitset>
+//#include <ostream>
 
 class Main : public wxFrame
 {
