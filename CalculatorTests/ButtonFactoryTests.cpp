@@ -1,5 +1,4 @@
 #include "ButtonFactoryTests.h"
-#include <iostream>
 
 void ButtonFactoryTests::TestButtonLabel1()
 {

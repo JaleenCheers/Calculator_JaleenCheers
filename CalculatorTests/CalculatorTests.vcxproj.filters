@@ -21,9 +21,15 @@
     <ClCompile Include="ButtonFactoryTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CalculatorProcessorTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonFactoryTests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorProcessorTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
