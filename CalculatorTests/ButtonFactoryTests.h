@@ -7,6 +7,7 @@ public:
 
 
 	ButtonFactory buttonFactory;
+	wxButton* btn;
 
 
 	void TestButtonLabel1();
