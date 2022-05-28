@@ -1,5 +1,6 @@
 #pragma once
 #include "../Calculator_JaleenCheers/ButtonFactory.h"
+#include "../Calculator_JaleenCheers/ButtonFactory.cpp"
 #include "wx/wx.h"
 class ButtonFactoryTests
 {
