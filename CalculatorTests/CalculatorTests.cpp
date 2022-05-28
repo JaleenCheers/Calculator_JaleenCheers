@@ -2,10 +2,22 @@
 //
 
 #include <iostream>
+#include "ButtonFactoryTests.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  //  ButtonFactoryTests buttonFactoryTests;
+
+   /* buttonFactoryTests.TestButtonId1();
+    buttonFactoryTests.TestButtonId2();
+    buttonFactoryTests.TestButtonId3();
+    buttonFactoryTests.TestButtonId4();
+    buttonFactoryTests.TestButtonLabel1();
+    buttonFactoryTests.TestButtonLabel2();
+    buttonFactoryTests.TestButtonLabel3();
+    buttonFactoryTests.TestButtonLabel4();
+    buttonFactoryTests.TestButtonValue1();
+    buttonFactoryTests.TestButtonValue2();*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
