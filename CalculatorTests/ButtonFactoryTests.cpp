@@ -84,8 +84,26 @@ void ButtonFactoryTests::TestButtonId4()
 
 void ButtonFactoryTests::TestButtonValue1()
 {
+	btn = buttonFactory.CreateButton(new wxWindow(), 10018, "1", wxDefaultPosition, wxSize(75, 60));
+	
+	float val = buttonFactory.GetValue(btn->GetId());
+
+
+	if (val == 1)
+		std::cout << "PASS" << std::endl;
+	else
+		std::cout << "FAIL" << std::endl;
 }
 
 void ButtonFactoryTests::TestButtonValue2()
 {
+	btn = buttonFactory.CreateButton(new wxWindow(), 10013, "2", wxDefaultPosition, wxSize(75, 60));
+
+	float val = buttonFactory.GetValue(btn->GetId());
+
+
+	if (val == 2)
+		std::cout << "PASS" << std::endl;
+	else
+		std::cout << "FAIL" << std::endl;
 }
