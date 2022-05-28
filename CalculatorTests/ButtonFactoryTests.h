@@ -3,6 +3,12 @@
 #include "wx/wx.h"
 class ButtonFactoryTests
 {
+public:
+
+
+	ButtonFactory buttonFactory;
+
+
 	void TestButtonLabel1();
 	void TestButtonLabel2();
 	void TestButtonLabel3();

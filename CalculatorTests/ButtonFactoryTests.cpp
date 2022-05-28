@@ -2,6 +2,7 @@
 
 void ButtonFactoryTests::TestButtonLabel1()
 {
+	//ButtonFactory::CreateButton(new wxWindow(), 10018, "1", wxDefaultPosition, wxSize(75, 60));
 }
 
 void ButtonFactoryTests::TestButtonLabel2()
