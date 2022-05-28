@@ -133,7 +133,7 @@ int CalculatorProcessor::Modulo()
 }
 float CalculatorProcessor::SquareRoot(float _num)
 {
-	float root = sqrt(_num);
+	float root = (float)sqrt(_num);
 	return root;
 }
 void CalculatorProcessor::AddVecCommand(IBaseCommand* _command)
